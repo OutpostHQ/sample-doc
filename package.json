@@ -20,6 +20,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "babel-plugin-styled-components": "^2.0.7",
+    "prettier": "^2.7.1",
     "typescript": "latest"
   }
 }
