@@ -1,14 +1,25 @@
-import { Card, Grid } from '@cube-dev/ui-kit'
+import { Card, Grid, Root } from '@cube-dev/ui-kit'
+import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
-
+import { TOKENS } from './tokens'
 export const Layout = ({ children, toc }) => {
   return (
-    <Grid gridColumns="200px 1fr" gridRows="60px 1fr" height="500px">
-      <Card gridColumn="1 / -1">Jenga-UI/Docs</Card>
-      <Card>
-        <TableOfContents toc={toc} />
-      </Card>
-      <Card>{children}</Card>
-    </Grid>
+    <Root styles={TOKENS}>
+      <Grid
+        gridColumns="256px 1fr 256px"
+        gridRows="60px 1fr 60px"
+        height="min 100vh"
+      >
+        <Card gridColumn="1 / -1">TopBar</Card>
+        <Card>
+          <SideNav />
+        </Card>
+        <Card>{children}</Card>
+        <Card>
+          <TableOfContents toc={toc} />
+        </Card>
+        <Card gridColumn="1 / -1">Footer</Card>
+      </Grid>
+    </Root>
   )
 }
