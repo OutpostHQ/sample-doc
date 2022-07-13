@@ -17,10 +17,9 @@ body {
   margin: 0;
 }
 
-p {
+/* p {
   line-height: 1.5em;
 }
-
 
 h1 {
   font-size: 40px;
@@ -32,4 +31,38 @@ h2 {
 
 a {
   color: rgba(75, 85, 99, 1);
+} */
+
+.DocSearch-Button {
+  background: var(--code-background);
+  height: 100%;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.DocSearch-Button-Container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.DocSearch-Button:hover {
+  box-shadow: none;
+  background: #e8eef3;
+}
+.DocSearch-Search-Icon {
+  color: var(--dark);
+  width: 16px;
+}
+.DocSearch-Button-Keys {
+  padding-inline: 6px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.DocSearch-Button-Keys > kbd:first-child {
+  font-size: x-large;
 }

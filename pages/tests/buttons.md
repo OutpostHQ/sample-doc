@@ -10,17 +10,17 @@ Button
 
 Others disabled because of no styles getting rendered
 
-<!-- {% button  type="primary" %}
+{% button  type="primary" %}
 Primary Button
-{% /button %} -->
+{% /button %}
 
-<!-- {% button type="outline" %}
+{% button type="outline" %}
 Outline Button
-{% /button %} -->
+{% /button %}
 
-<!-- {% button theme="danger" %}
+{% button theme="danger" %}
 Danger Button
-{% /button %} -->
+{% /button %}
 
 <!-- {% button isDisabled=true %}
 Loading Button
