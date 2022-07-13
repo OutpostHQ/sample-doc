@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import { Link } from '@cube-dev/ui-kit'
 
 const items = [
   {
@@ -22,9 +23,9 @@ export function SideNav() {
               const active = router.pathname === link.href
               return (
                 <li key={link.href} className={active ? 'active' : ''}>
-                  <Link {...link}>
+                  <NextLink {...link} passHref>
                     <a href={link.href}>{link.children}</a>
-                  </Link>
+                  </NextLink>
                 </li>
               )
             })}

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 export function TableOfContents({ toc }) {
+  console.log(toc)
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   )

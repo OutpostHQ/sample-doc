@@ -1,10 +1,12 @@
 import { Card, Grid, Root } from '@cube-dev/ui-kit'
+import { useRouter } from 'next/router'
 import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
 import { TOKENS } from './tokens'
 export const Layout = ({ children, toc }) => {
+  const Router = useRouter()
   return (
-    <Root styles={TOKENS}>
+    <Root styles={TOKENS} fonts={false} router={Router}>
       <Grid
         gridColumns="256px 1fr 256px"
         gridRows="60px 1fr 60px"
