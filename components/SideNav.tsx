@@ -14,11 +14,11 @@ export function SideNav() {
   const router = useRouter()
 
   return (
-    <nav className="sidenav">
+    <nav>
       {items.map((item) => (
         <div key={item.title}>
           <span>{item.title}</span>
-          <ul className="flex column">
+          <ul>
             {item.links.map((link) => {
               const active = router.pathname === link.href
               return (
