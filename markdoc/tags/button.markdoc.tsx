@@ -12,7 +12,7 @@ export default {
     isSelected: {
       type: Boolean,
     },
-    primary: {
+    type: {
       type: String,
     },
     theme: {
