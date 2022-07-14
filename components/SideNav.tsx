@@ -1,37 +1,27 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
-import { Link } from '@cube-dev/ui-kit'
+import { Card } from '@cube-dev/ui-kit'
 
-const items = [
-  {
-    title: 'Get started',
-    links: [{ href: '/docs', children: 'Overview' }],
-  },
-]
+function NavigationLink() {
+  return <></>
+}
+function NavigationSection() {
+  return <></>
+}
 
 export function SideNav() {
   const router = useRouter()
 
   return (
-    <nav>
-      {items.map((item) => (
-        <div key={item.title}>
-          <span>{item.title}</span>
-          <ul>
-            {item.links.map((link) => {
-              const active = router.pathname === link.href
-              return (
-                <li key={link.href} className={active ? 'active' : ''}>
-                  <NextLink {...link} passHref>
-                    <a href={link.href}>{link.children}</a>
-                  </NextLink>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      ))}
-    </nav>
+    <Card
+      styles={{
+        backgroundColor: 'var(--secondary-bg)',
+        borderColor: 'var(--border-color)',
+        color: '--var(--primary-text-color)',
+      }}
+    >
+      <nav>Hello</nav>
+    </Card>
   )
 }
