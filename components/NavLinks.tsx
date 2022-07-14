@@ -8,7 +8,7 @@ export function NavLinks() {
   return (
     <>
       <Space gap="0">
-        <Button type="clear">
+        <Button type="clear" aria-label="Change theme">
           <svg
             width="18"
             height="19"
@@ -22,13 +22,13 @@ export function NavLinks() {
             />
           </svg>
         </Button>
-        <Button type="clear" to="#github">
+        <Button type="clear" to="#github" aria-label="Go to github">
           <GithubIcon />
         </Button>
-        <Button type="clear" to="#discord">
+        <Button type="clear" to="#discord" aria-label="Go to discord">
           <DiscordIcon />
         </Button>
-        <Button type="clear" to="#twitter">
+        <Button type="clear" to="#twitter" aria-label="Go to twitter">
           <TwitterIcon />
         </Button>
       </Space>
