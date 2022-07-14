@@ -13,9 +13,9 @@ export const Layout = ({ children, toc }) => {
       <ThemeProvider theme={lightTheme}>
         <Grid gridColumns="256px 1fr" gridRows="60px 1fr" height="min 100vh">
           <Card gridColumn="1 / -1">TopBar</Card>
-          <StyledCard>
+          <Card className="SideBar">
             <SideNav />
-          </StyledCard>
+          </Card>
           <Grid gridColumns="1fr 256px" gridRows="1fr 200px">
             <Card>{children}</Card>
             <Card>

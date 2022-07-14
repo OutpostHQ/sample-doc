@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Layout } from '../components/Layout'
-import '../public/globals.css'
+import '../styles/globals.css'
 const TITLE = 'Markdoc'
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework'
 
