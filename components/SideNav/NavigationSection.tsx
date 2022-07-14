@@ -3,13 +3,14 @@ import NavigationLink from './NavigationLink'
 export default function NavigationSection({
   sectionItems,
 }: {
-  sectionItems: string[]
+  sectionItems: { name: string; pathname: string }[]
 }) {
   return (
-    <Space flow="column" styles={{ paddingLeft: '20px', paddingTop: '10px' }}>
+    <Space flow="column" padding="10px 0 0 0">
       {sectionItems.map((item) => (
-        <NavigationLink name={item} />
+        <NavigationLink item={item} key={item.name} />
       ))}
     </Space>
   )
 }
+//do with accordian

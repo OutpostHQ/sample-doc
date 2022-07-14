@@ -72,8 +72,3 @@ html[data-theme='dark'] {
 .DocSearch-Button-Keys > kbd:last-child {
   font-size: 1.01rem;
 }
-.SideBar {
-  background-color: var(--secondary-bg);
-  color: var(--primary-text-color);
-  border-color: var(--border-color);
-}

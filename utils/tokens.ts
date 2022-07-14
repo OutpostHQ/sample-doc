@@ -239,4 +239,4 @@ Object.keys(colors).forEach((name) => {
   TOKENS[`${name}-color-rgb`] = colors[name]
 })
 
-export { TOKENS }
+export default TOKENS
