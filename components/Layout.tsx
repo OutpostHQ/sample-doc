@@ -6,13 +6,16 @@ import { TOKENS } from './tokens'
 import { StyledCard } from './styled'
 import { lightTheme } from './theme/light'
 import { ThemeProvider } from 'styled-components'
+import { TopNav } from './TopNav'
 export const Layout = ({ children, toc }) => {
   const Router = useRouter()
   return (
     <Root styles={TOKENS} fonts={false} router={Router}>
       <ThemeProvider theme={lightTheme}>
-        <Grid gridColumns="256px 1fr" gridRows="60px 1fr" height="min 100vh">
-          <Card gridColumn="1 / -1">TopBar</Card>
+        <Grid gridColumns="256px 1fr" gridRows="65px 1fr" height="min 100vh">
+          <Card gridColumn="1 / -1" padding="8px">
+            <TopNav />
+          </Card>
           <Card className="SideBar">
             <SideNav />
           </Card>

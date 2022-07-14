@@ -8,7 +8,7 @@ import Search from './Search'
 export function TopNav() {
   return (
     <nav>
-      <Flex justifyContent="space-between" padding="10px" alignItems="center">
+      <Flex justifyContent="space-between" alignItems="center">
         <Link type="undefined" to="/" label="home">
           <MainLogo />
         </Link>
@@ -20,7 +20,6 @@ export function TopNav() {
           </Flex>
         </section>
       </Flex>
-      <hr style={{ margin: 0 }} />
     </nav>
   )
 }
