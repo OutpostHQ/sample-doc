@@ -15,7 +15,11 @@ First, clone this repo and install the dependencies required:
 
 ```bash
 npm install
-# or
+```
+
+or
+
+```bash
 yarn install
 ```
 
@@ -23,7 +27,11 @@ Then, run the development server:
 
 ```bash
 npm run dev
-# or
+```
+
+or
+
+```bash
 yarn dev
 ```
 
@@ -42,3 +50,32 @@ The quickest way to deploy your own version of this boilerplate is by deploying 
 ### Deploy to Netlify
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/next.js-starter)
+
+Javascript example
+
+```js
+const source = '# Markdoc'
+
+const ast = Markdoc.parse(source)
+
+const content = Markdoc.transform(ast /* [config](/docs/syntax#config) */)
+
+const html = Markdoc.renderers.html(content)
+```
+
+Bash exmple
+
+```bash
+cd ~/docs
+```
+
+Python example
+
+```python
+greet = 'hello'
+user = 'world'
+if(user=='world'):
+    greet = greet+user
+print(greet)
+
+```
