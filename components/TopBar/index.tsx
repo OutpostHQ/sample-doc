@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLinks } from './NavLinks'
 import { Flex, Link } from '@cube-dev/ui-kit'
-import { MainLogo } from './icons/MainLogo'
+import { MainLogo } from '../icons/MainLogo'
 import Sponser from './Sponser'
 import Search from './Search'
 import VersionSelect from './versionSelector'
 
-export function TopNav() {
+export function TopBar() {
   return (
     <nav>
       <Flex justifyContent="space-between" alignItems="center">

@@ -1,6 +1,5 @@
 export * from './SideNav'
 export * from './TableOfContents'
-export * from './TopNav'
 export * from './CodeBlock'
 export * from './Callout'
 export * from './Heading'

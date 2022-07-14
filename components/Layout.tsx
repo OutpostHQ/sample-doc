@@ -3,14 +3,14 @@ import { useRouter } from 'next/router'
 import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
 import { TOKENS } from './tokens'
-import { TopNav } from './TopNav'
+import { TopBar } from './TopBar'
 export const Layout = ({ children, toc }) => {
   const Router = useRouter()
   return (
     <Root styles={TOKENS} fonts={false} router={Router}>
       <Grid gridColumns="256px 1fr" gridRows="65px 1fr" height="min 100vh">
         <Card gridColumn="1 / -1" padding="8px">
-          <TopNav />
+          <TopBar />
         </Card>
         <SideNav />
         <Grid gridColumns="1fr 256px" gridRows="1fr 200px">

@@ -1,8 +1,8 @@
 import { Button, Flex, Space } from '@cube-dev/ui-kit'
 import React from 'react'
-import { DiscordIcon } from './icons/DiscordIcon'
-import { GithubIcon } from './icons/GithubIcon'
-import { TwitterIcon } from './icons/TwitterIcon'
+import { DiscordIcon } from '../icons/DiscordIcon'
+import { GithubIcon } from '../icons/GithubIcon'
+import { TwitterIcon } from '../icons/TwitterIcon'
 
 export function NavLinks() {
   return (
