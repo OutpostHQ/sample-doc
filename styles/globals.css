@@ -33,36 +33,36 @@ html[data-theme='dark'] {
 .DocSearch-Button {
   color: var(--primary-text-color);
   background: var(--secondary-bg);
+  cursor: pointer;
   height: 100%;
-  padding-inline-start: 15px;
-  border-radius: 10px;
-  border-width: 1px;
-  border-color: var(--border-color);
   width: 100%;
+  padding-inline-start: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .DocSearch-Button-Container {
   display: flex;
-  gap: 12px;
+  gap: 1rem;
   align-items: center;
 }
 .DocSearch-Button:hover {
   box-shadow: none;
-  background: #e8eef3;
+  background: var(--primary-bg);
 }
 .DocSearch-Search-Icon {
   color: var(--dark);
-  width: 16px;
+  width: 1.5rem;
 }
 .DocSearch-Button-Keys {
-  padding-inline: 6px;
+  padding-inline: 0.25rem;
   background-color: white;
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 0.5rem;
   display: flex;
-  gap: 2px;
+  gap: 0.125rem;
   align-items: center;
 }
 

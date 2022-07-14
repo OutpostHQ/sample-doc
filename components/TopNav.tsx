@@ -10,14 +10,14 @@ export function TopNav() {
   return (
     <nav>
       <Flex justifyContent="space-between" alignItems="center">
-        <Flex alignItems="center" gap="15px">
+        <Flex alignItems="center" gap="2rem">
           <Link type="undefined" to="/" label="home">
             <MainLogo />
           </Link>
           <VersionSelect />
         </Flex>
         <section>
-          <Flex gap="10px" alignItems="center">
+          <Flex gap="1rem" alignItems="center">
             <Search />
             <NavLinks />
             <Sponser />

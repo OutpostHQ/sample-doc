@@ -5,9 +5,10 @@ export default function SponserBtn() {
   return (
     <Button
       icon={<HeartFilled style={{ color: 'rgba(172, 50, 60, 1)' }} />}
-      gap="5px"
+      gap="0.5rem"
       type={'outline'}
       size="default"
+      radius="0.5rem"
     >
       Sponser
     </Button>
