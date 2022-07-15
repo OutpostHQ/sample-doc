@@ -40,7 +40,9 @@ export function TopBar({
             <Block flex="0 0 auto" display={['initial', , 'none']}>
               <NavLinks />
             </Block>
-            <Sponser />
+            <Block display={['initial', , 'none']}>
+              <Sponser />
+            </Block>
           </Flex>
         </section>
       </Flex>
