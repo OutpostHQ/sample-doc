@@ -11,7 +11,7 @@ export default function NavigationLink({
       styles={{
         backgroundColor:
           typeof window != 'undefined' &&
-          window.location.pathname.includes(item.pathname) //better than endsWith since path can have tabs or sections
+          window.location.pathname.endsWith(item.pathname)
             ? '#primary.20'
             : 'initial',
         borderRadius: '10px',

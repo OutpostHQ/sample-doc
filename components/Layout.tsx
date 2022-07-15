@@ -6,6 +6,7 @@ import TOKENS from '../utils/tokens'
 import { TopBar } from './TopBar'
 import { ScrollableYGrid, StickyCard } from './tasty'
 import { useState } from 'react'
+import { PageFooter, SiteFooter } from './Footer'
 export const Layout = ({ children, toc }) => {
   const Router = useRouter()
   const [sideNavOpen, toggleSideNav] = useState(true)
@@ -18,7 +19,7 @@ export const Layout = ({ children, toc }) => {
             '256px 1fr',
             sideNavOpen ? '1fr 0' : '1fr',
           ]}
-          gridRows={['65px 1fr', '65px 1fr', '100px 1fr']} // change header length when menu open
+          gridRows={['65px 1fr ', '65px 1fr ', '100px 1fr']} // change header length when menu open
           height="100vh"
         >
           <StickyCard gridColumn="1 / -1" padding="8px">
@@ -30,7 +31,7 @@ export const Layout = ({ children, toc }) => {
             gridRows="1fr"
             height="calc(100vh - 65px)"
           >
-            <Grid gridRows={'1fr 200px'}>
+            <Grid gridRows={'1fr 160px'}>
               <Card>
                 {' '}
                 <Button
@@ -42,14 +43,22 @@ export const Layout = ({ children, toc }) => {
                 </Button>
                 {children}
               </Card>
-              <Card gridColumn="1 / -1">Footer</Card>
+              <Card gridColumn="1 / -1" styles={{ borderBottom: 'none' }}>
+                <PageFooter />
+              </Card>
             </Grid>
             <StickyCard
-              height="calc(100vh - 65px)"
+              height="calc(100vh - 130px)"
               display={['initial', 'none']}
+              styles={{
+                borderBottom: 'none',
+              }}
             >
               <TableOfContents toc={toc} />
             </StickyCard>
+            <Card gridColumn="1 / -1" styles={{ borderTop: 'none' }}>
+              <SiteFooter />
+            </Card>
           </ScrollableYGrid>
         </Grid>
       </Root>
