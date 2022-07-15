@@ -9,9 +9,9 @@ import { useState } from 'react'
 import { PageFooter, SiteFooter } from './Footer'
 export const Layout = ({ children, toc }) => {
   const Router = useRouter()
-  const [sideNavOpen, toggleSideNav] = useState(true)
+  const [sideNavOpen, toggleSideNav] = useState(false)
   return (
-    <BreakpointsProvider value={[1200, 768]}>
+    <BreakpointsProvider value={[1200, 640]}>
       <Root styles={TOKENS} fonts={false} router={Router}>
         <Grid
           gridColumns={[
@@ -19,11 +19,11 @@ export const Layout = ({ children, toc }) => {
             '256px 1fr',
             sideNavOpen ? '1fr 0' : '1fr',
           ]}
-          gridRows={['65px 1fr ', '65px 1fr ', '100px 1fr']} // change header length when menu open
+          gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
           height="100vh"
         >
-          <StickyCard gridColumn="1 / -1" padding="8px">
-            <TopBar />
+          <StickyCard gridColumn="1 / -1" padding="0">
+            <TopBar sideNavOpen={sideNavOpen} setSideNavOpen={toggleSideNav} />
           </StickyCard>
           <SideNav state={sideNavOpen} />
           <ScrollableYGrid
@@ -31,21 +31,9 @@ export const Layout = ({ children, toc }) => {
             gridRows="1fr"
             height="calc(100vh - 65px)"
           >
-            <Grid gridRows={'1fr 160px'}>
-              <Card>
-                {' '}
-                <Button
-                  onClick={() => {
-                    toggleSideNav(!sideNavOpen)
-                  }}
-                >
-                  Change
-                </Button>
-                {children}
-              </Card>
-              <Card gridColumn="1 / -1" styles={{ borderBottom: 'none' }}>
-                <PageFooter />
-              </Card>
+            <Grid gridRows={'1fr 200px'}>
+              <Card>{children}</Card>
+              <Card gridColumn="1 / -1">Footer</Card>
             </Grid>
             <StickyCard
               height="calc(100vh - 130px)"
