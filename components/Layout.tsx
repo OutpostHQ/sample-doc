@@ -22,7 +22,7 @@ export const Layout = ({ children, toc }) => {
           gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
           height="100vh"
         >
-          <StickyBlock gridColumn="1 / -1" padding="0">
+          <StickyBlock gridColumn="1 / -1" padding="0" border="bottom">
             <TopBar sideNavOpen={sideNavOpen} setSideNavOpen={toggleSideNav} />
           </StickyBlock>
           <SideNav state={sideNavOpen} />
