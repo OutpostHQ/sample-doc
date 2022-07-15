@@ -6,7 +6,7 @@ export default function NavigationSection({
   sectionItems: { name: string; pathname: string }[]
 }) {
   return (
-    <Space flow="column" padding="10px 0 0 0">
+    <Space flow="column">
       {sectionItems.map((item) => (
         <NavigationLink item={item} key={item.name} />
       ))}

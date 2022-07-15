@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Layout } from '../components/Layout'
 import '../styles/globals.css'
+import '../styles/fonts.css'
+
 const TITLE = 'Markdoc'
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework'
 const GITHUBLINK = 'https://github.com/OutpostHQ/sample-doc'

@@ -12,7 +12,13 @@ export const Layout = ({ children, toc, githublink }) => {
   const [sideNavOpen, toggleSideNav] = useState(false)
   return (
     <BreakpointsProvider value={[1200, 640]}>
-      <Root styles={TOKENS} fonts={false} router={Router}>
+      <Root
+        styles={TOKENS}
+        fonts={false}
+        router={Router}
+        font="SFProDisplay"
+        monospaceFont="SFMono"
+      >
         <Grid
           gridColumns={[
             '256px 1fr',
@@ -33,7 +39,7 @@ export const Layout = ({ children, toc, githublink }) => {
           >
             <Grid gridRows={'1fr 200px'}>
               <Block padding="1rem 2rem">{children}</Block>
-              <Block padding="1rem 2rem" >
+              <Block padding="1rem 2rem">
                 <PageFooter githublink={githublink} />
               </Block>
               {/* <Block gridColumn="1 / -1">Footer</Block> */}

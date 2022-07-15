@@ -1,5 +1,5 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
-import { Button, Flex, Space, Text, Link } from '@cube-dev/ui-kit'
+import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { DocsArray } from '../../utils/DocsArray'
@@ -13,7 +13,6 @@ export const PageFooter = ({ githublink }) => {
       break
     }
   }
-  console.log(currentIndex)
   return (
     <Flex
       padding="15px 20px"

@@ -15,11 +15,12 @@ export default function NavigationLink({
             ? '#primary.20'
             : 'initial',
         borderRadius: '10px',
-        padding: '5px 10px',
       }}
     >
       <NextLink href={`/docs/${item.pathname}`}>
-        <Text>{item.name}</Text>
+        <Block padding="8px auto 0 46px">
+          <Text weight={400}>{item.name}</Text>
+        </Block>
       </NextLink>
     </Block>
   )

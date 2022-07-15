@@ -6,7 +6,7 @@ const TastySideNav = tasty(Block, {
   /** Extend or rewrite styles */
   styles: {
     backgroundColor: '#primary.10',
-    paddingLeft: '20px',
+    padding: '8px',
     overflowY: 'scroll',
   },
   /** Add more default properties/attributes */
@@ -18,4 +18,11 @@ const StickyBlock = tasty(Block, {
     top: '0',
   },
 })
-export { StickyBlock, TastySideNav }
+
+const SectionBlock = tasty(Block, {
+  flow: 'column',
+  styles: {
+    marginTop: '20px',
+  },
+})
+export { StickyBlock, TastySideNav, SectionBlock }
