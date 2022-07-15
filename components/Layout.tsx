@@ -1,10 +1,10 @@
-import { BreakpointsProvider, Button, Card, Grid, Root } from '@cube-dev/ui-kit'
+import { Block, BreakpointsProvider, Grid, Root } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
 import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
 import TOKENS from '../utils/tokens'
 import { TopBar } from './TopBar'
-import { ScrollableYGrid, StickyCard } from './tasty'
+import { ScrollableYGrid, StickyBlock } from './tasty'
 import { useState } from 'react'
 import { PageFooter, SiteFooter } from './Footer'
 export const Layout = ({ children, toc }) => {
@@ -22,9 +22,9 @@ export const Layout = ({ children, toc }) => {
           gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
           height="100vh"
         >
-          <StickyCard gridColumn="1 / -1" padding="0">
+          <StickyBlock gridColumn="1 / -1" padding="0">
             <TopBar sideNavOpen={sideNavOpen} setSideNavOpen={toggleSideNav} />
-          </StickyCard>
+          </StickyBlock>
           <SideNav state={sideNavOpen} />
           <ScrollableYGrid
             gridColumns={['1fr 256px', '1fr']}
@@ -32,10 +32,10 @@ export const Layout = ({ children, toc }) => {
             height="calc(100vh - 65px)"
           >
             <Grid gridRows={'1fr 200px'}>
-              <Card>{children}</Card>
-              <Card gridColumn="1 / -1">Footer</Card>
+              <Block>{children}</Block>
+              <Block gridColumn="1 / -1">Footer</Block>
             </Grid>
-            <StickyCard
+            <StickyBlock
               height="calc(100vh - 234px)"
               display={['initial', 'none']}
               styles={{
@@ -43,10 +43,10 @@ export const Layout = ({ children, toc }) => {
               }}
             >
               <TableOfContents toc={toc} />
-            </StickyCard>
-            <Card gridColumn="1 / -1" styles={{ borderTop: 'none' }}>
+            </StickyBlock>
+            <Block gridColumn="1 / -1" styles={{ borderTop: 'none' }}>
               <SiteFooter />
-            </Card>
+            </Block>
           </ScrollableYGrid>
         </Grid>
       </Root>

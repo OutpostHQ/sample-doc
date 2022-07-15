@@ -1,2 +1,2 @@
-export * from './TastyCards'
+export * from './TastyBlock'
 export * from './TastyGrids'

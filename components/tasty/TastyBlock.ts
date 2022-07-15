@@ -1,6 +1,6 @@
-import { Card, tasty } from '@cube-dev/ui-kit'
+import { Block, tasty } from '@cube-dev/ui-kit'
 
-const TastySideNav = tasty(Card, {
+const TastySideNav = tasty(Block, {
   /** Change tag name */
   as: 'nav',
   /** Extend or rewrite styles */
@@ -12,10 +12,10 @@ const TastySideNav = tasty(Card, {
   /** Add more default properties/attributes */
 })
 
-const StickyCard = tasty(Card, {
+const StickyBlock = tasty(Block, {
   styles: {
     position: 'sticky',
     top: '0',
   },
 })
-export { StickyCard, TastySideNav }
+export { StickyBlock, TastySideNav }
