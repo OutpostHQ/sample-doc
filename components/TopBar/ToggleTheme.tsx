@@ -2,7 +2,7 @@ import { Button } from '@cube-dev/ui-kit'
 
 export default function ToggleTheme() {
   return (
-    <Button type="clear" aria-label="Change theme" padding="0.5rem">
+    <Button type="clear" aria-label="Change theme" size={'small'}>
       <svg
         width="18"
         height="19"

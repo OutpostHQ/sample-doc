@@ -20,7 +20,7 @@ export function TopBar({
       <Flex
         justifyContent="space-between"
         alignItems="center"
-        padding={['0.6rem', , ' 0.25rem 0.1rem']}
+        padding={['0.6rem 0.4rem', , ' 0.25rem 0.1rem']}
       >
         <Flex alignItems="center" gap={['2vw ', '1vw', '0.5rem']}>
           <Link type="undefined" to="/" label="home" size={'small'}>
@@ -29,11 +29,11 @@ export function TopBar({
           <VersionSelect />
         </Flex>
         <section>
-          <Flex gap={['1rem', '0.5rem', 0]} alignItems="center">
-            <Block width="25vw" height="42px" display={['initial', , 'none']}>
+          <Flex alignItems="center">
+            <Block width="20vw" height="42px" display={['initial', , 'none']}>
               <Search />
             </Block>
-            <Block flex="0 0 auto">
+            <Block flex="0 0 auto" paddingInline={[0, , '0.5rem 0']}>
               <ToggleTheme />
               <ToggleSidebar open={sideNavOpen} setOpen={setSideNavOpen} />
             </Block>

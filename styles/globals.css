@@ -46,7 +46,7 @@ html[data-theme='dark'] {
 }
 .DocSearch-Button-Container {
   display: flex;
-  gap: 1rem;
+  gap: 2vw;
   align-items: center;
 }
 .DocSearch-Button:hover {
@@ -55,7 +55,7 @@ html[data-theme='dark'] {
 }
 .DocSearch-Search-Icon {
   color: var(--dark);
-  width: 1.5rem;
+  /* width: 0.75rem; */
 }
 .DocSearch-Button-Keys {
   padding-inline: 0.25rem;
