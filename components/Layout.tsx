@@ -36,7 +36,7 @@ export const Layout = ({ children, toc }) => {
               <Card gridColumn="1 / -1">Footer</Card>
             </Grid>
             <StickyCard
-              height="calc(100vh - 130px)"
+              height="calc(100vh - 234px)"
               display={['initial', 'none']}
               styles={{
                 borderBottom: 'none',
