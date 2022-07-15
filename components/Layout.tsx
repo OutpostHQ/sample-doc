@@ -7,7 +7,7 @@ import { TopBar } from './TopBar'
 import { ScrollableYGrid, StickyBlock } from './tasty'
 import { useState } from 'react'
 import { PageFooter, SiteFooter } from './Footer'
-export const Layout = ({ children, toc,githublink }) => {
+export const Layout = ({ children, toc, githublink }) => {
   const Router = useRouter()
   const [sideNavOpen, toggleSideNav] = useState(false)
   return (
@@ -33,8 +33,8 @@ export const Layout = ({ children, toc,githublink }) => {
           >
             <Grid gridRows={'1fr 200px'}>
               <Block padding="1rem 2rem">{children}</Block>
-              <Block padding="1rem 2rem">
-                <PageFooter githublink={githublink}/>
+              <Block padding="1rem 2rem" >
+                <PageFooter githublink={githublink} />
               </Block>
               {/* <Block gridColumn="1 / -1">Footer</Block> */}
             </Grid>
@@ -47,7 +47,7 @@ export const Layout = ({ children, toc,githublink }) => {
             >
               <TableOfContents toc={toc} />
             </StickyBlock>
-            <Block gridColumn="1 / -1" styles={{ borderTop: 'none' }}>
+            <Block gridColumn="1 / -1" border="top">
               <SiteFooter />
             </Block>
           </ScrollableYGrid>

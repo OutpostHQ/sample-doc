@@ -21,6 +21,7 @@ export const PageFooter = ({ githublink }) => {
       height="100%"
       justifyContent="space-around"
       gap="20px"
+      border="top"
     >
       <Space flow="row">
         <EditFilled />
