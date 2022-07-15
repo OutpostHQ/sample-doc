@@ -32,7 +32,7 @@ export const Layout = ({ children, toc }) => {
             height="calc(100vh - 65px)"
           >
             <Grid gridRows={'1fr 200px'}>
-              <Block>{children}</Block>
+              <Block padding="1rem 2rem">{children}</Block>
               <Block gridColumn="1 / -1">Footer</Block>
             </Grid>
             <StickyBlock
