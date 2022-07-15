@@ -5,6 +5,7 @@ import { Layout } from '../components/Layout'
 import '../styles/globals.css'
 const TITLE = 'Markdoc'
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework'
+const GITHUBLINK = 'https://github.com/OutpostHQ/sample-doc'
 
 function collectHeadings(node, sections = []) {
   if (node) {
@@ -33,12 +34,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const { markdoc } = pageProps
   let title = TITLE
   let description = DESCRIPTION
+  let githublink = GITHUBLINK
   if (markdoc) {
     if (markdoc.frontmatter.title) {
       title = markdoc.frontmatter.title
     }
     if (markdoc.frontmatter.description) {
       description = markdoc.frontmatter.description
+    }
+    if (markdoc.frontmatter.githublink) {
+      githublink = markdoc.frontmatter.githublink
     }
   }
 
@@ -57,7 +62,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout toc={toc}>
+      <Layout toc={toc} githublink={githublink}>
         <Component {...pageProps} />
       </Layout>
     </SSRProvider>

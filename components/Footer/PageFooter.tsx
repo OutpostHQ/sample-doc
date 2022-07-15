@@ -1,9 +1,9 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
-import { Button, Flex, Space, Text } from '@cube-dev/ui-kit'
+import { Button, Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { DocsArray } from '../../utils/DocsArray'
-export const PageFooter = () => {
+export const PageFooter = ({ githublink }) => {
   const router = useRouter()
   const currentPath = router.pathname
   let currentIndex = undefined
@@ -24,7 +24,7 @@ export const PageFooter = () => {
     >
       <Space flow="row">
         <EditFilled />
-        <Text>Edit this page on GitHub</Text>
+        <Link to={'!' + githublink}>Edit this page on GitHub</Link>
       </Space>
       <Flex flow="row" justifyContent="space-between">
         <Flex flow="column" alignItems="flex-start" gap={'10px'}>

@@ -1,11 +1,12 @@
 ---
 title: Get started with Markdoc
 description: How to get started with Markdoc
+githublink: https://github.com/OutpostHQ/sample-doc/blob/main/pages/index.md
 ---
 
 # Full Next.js example
 
-{% callout %}
+{% callout title="callout" %}
 This is a full-featured boilerplate for a creating a documentation website using Markdoc and Next.js.
 {% /callout %}
 
