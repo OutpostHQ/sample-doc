@@ -23,14 +23,16 @@ const HThreeText = tasty(HeadingText, {
 })
 const SideMenuText = tasty(Text, {
   weight: 400,
+  as: 'a',
   styles: {
     fontSize: ['16px', '16px', '18px'],
   },
 })
-const SectionTitleText = tasty(SideMenuText, {
+const SectionTitleText = tasty(Text, {
   weight: 800,
-  style: {
+  styles: {
     letterSpacing: '0.1rem',
+    fontSize: ['16px', '16px', '18px'],
   },
 })
 

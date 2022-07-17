@@ -2,7 +2,7 @@ import { Block, tasty } from '@cube-dev/ui-kit'
 const NavBlock = tasty(Block, {
   as: 'nav',
 })
-const TastySideNav = tasty(NavBlock, {
+const TastySideNavWrapper = tasty(NavBlock, {
   styles: {
     backgroundColor: '#primary.10',
     padding: '8px',
@@ -34,4 +34,4 @@ const ActiveBlock = tasty(Block, {
     borderRadius: '10px',
   },
 })
-export { StickyBlock, TastySideNav, SectionBlock, NavBlock, ActiveBlock }
+export { StickyBlock, TastySideNavWrapper, SectionBlock, NavBlock, ActiveBlock }

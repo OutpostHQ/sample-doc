@@ -33,7 +33,9 @@ export function TableOfContents({ toc }) {
               padding={`3px auto 3px calc(10 * ${item.level - 1}px)`}
             >
               <NextLink href={href} passHref>
-                <Text weight={item.level === 2 ? 500 : 400}>{item.title}</Text>
+                <Text weight={item.level === 2 ? 500 : 400} as="a">
+                  {item.title}
+                </Text>
               </NextLink>
             </ToggleBlock>
           )

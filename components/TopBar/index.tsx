@@ -7,6 +7,7 @@ import Search from './Search'
 import VersionSelect from './versionSelector'
 import ToggleSidebar from './ToggleSidebar'
 import ToggleTheme from './ToggleTheme'
+import { NavBlock } from '../tasty'
 
 export function TopBar({
   sideNavOpen,
@@ -16,7 +17,7 @@ export function TopBar({
   setSideNavOpen: React.Dispatch<SetStateAction<boolean>>
 }) {
   return (
-    <nav>
+    <NavBlock>
       <Flex
         justifyContent="space-between"
         alignItems="center"
@@ -53,6 +54,6 @@ export function TopBar({
       >
         <Search />
       </Block>
-    </nav>
+    </NavBlock>
   )
 }
