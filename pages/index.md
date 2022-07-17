@@ -1,6 +1,6 @@
 ---
-title: Get started with Markdoc
-description: How to get started with Markdoc
+title: Jenga UI
+description: how to get started with Jenga UI
 githublink: https://github.com/OutpostHQ/sample-doc/blob/main/pages/index.md
 ---
 

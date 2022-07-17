@@ -38,7 +38,9 @@ export const Layout = ({ children, toc, githublink }) => {
             height="calc(100vh - 65px)"
           >
             <Grid gridRows={'1fr 200px'}>
-              <Block padding="1rem 2rem">{children}</Block>
+              <Block padding={['50px 32px 0 ', '50px 20px 0 ']}>
+                {children}
+              </Block>
               <Block padding="1rem 2rem">
                 <PageFooter githublink={githublink} />
               </Block>

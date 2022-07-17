@@ -21,6 +21,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'SFProDisplay';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/SFPRODISPLAYBOLD.OTF);
+}
 
 @font-face {
   font-family: 'SFProDisplay';

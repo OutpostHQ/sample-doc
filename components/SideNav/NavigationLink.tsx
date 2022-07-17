@@ -1,28 +1,29 @@
-import { Block, Text } from '@cube-dev/ui-kit'
+import { Block, Flex, Text } from '@cube-dev/ui-kit'
 import NextLink from 'next/link'
+import { useContext } from 'react'
+import { PathContext } from './PathContext'
+import ToggleBlock from '../ToggleBlock'
+import { SideMenuText } from '../tasty'
 export default function NavigationLink({
   item,
 }: {
   item: { name: string; pathname: string }
 }) {
+  const path = useContext(PathContext)
   return (
-    <Block
-      key={item.name}
-      styles={{
-        backgroundColor:
-          typeof window != 'undefined' &&
-          window.location.pathname.endsWith(item.pathname)
-            ? '#primary.20'
-            : 'initial',
-        borderRadius: '10px',
-      }}
-    >
+    <ToggleBlock active={path.endsWith(item.pathname)}>
       <NextLink href={`/docs/${item.pathname}`}>
-        <Block padding="8px auto 0 46px">
-          <Text weight={400}>{item.name}</Text>
-        </Block>
+        <Flex
+          padding="3px 0 3px 46px"
+          height="100%"
+          width={'100%'}
+          alignItems={'center'}
+          justifyContent={'flex-start'}
+        >
+          <SideMenuText>{item.name}</SideMenuText>
+        </Flex>
       </NextLink>
-    </Block>
+    </ToggleBlock>
   )
 }
 // rewrite with AccordianItem

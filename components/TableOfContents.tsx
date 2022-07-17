@@ -1,5 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import NextLink from 'next/link'
+import { HOneText, HThreeText, HTwoText, NavBlock } from './tasty'
+import { Block, Space, Text } from '@cube-dev/ui-kit'
+import { useRouter } from 'next/router'
+import ToggleBlock from './ToggleBlock'
 
 export function TableOfContents({ toc }) {
   const items = toc.filter(
@@ -9,31 +13,32 @@ export function TableOfContents({ toc }) {
   if (items.length <= 1) {
     return null
   }
-
+  const router = useRouter()
+  const [hash, setHash] = useState('')
+  useEffect(() => {
+    setHash(router.asPath.split('#')[1] || '')
+  }, [router])
   return (
-    <nav className="toc">
-      <ul className="flex column">
+    <NavBlock padding={'50px 16px 0'}>
+      <Block padding="10px 0">
+        <Text weight={800}>Contents</Text>
+      </Block>
+      <Space flow="column">
         {items.map((item) => {
           const href = `#${item.id}`
-          const active =
-            typeof window !== 'undefined' && window.location.hash === href
           return (
-            <li
+            <ToggleBlock
               key={item.title}
-              className={[
-                active ? 'active' : undefined,
-                item.level === 3 ? 'padded' : undefined,
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              active={hash === item.id}
+              padding={`3px auto 3px calc(10 * ${item.level - 1}px)`}
             >
-              <Link href={href} passHref>
-                <a>{item.title}</a>
-              </Link>
-            </li>
+              <NextLink href={href} passHref>
+                <Text weight={item.level === 2 ? 500 : 400}>{item.title}</Text>
+              </NextLink>
+            </ToggleBlock>
           )
         })}
-      </ul>
-    </nav>
+      </Space>
+    </NavBlock>
   )
 }

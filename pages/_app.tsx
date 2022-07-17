@@ -5,12 +5,14 @@ import { Layout } from '../components/Layout'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 
-const TITLE = 'Markdoc'
-const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework'
+const TITLE = 'Jenga UI'
+const DESCRIPTION =
+  'A fast, reusable, composable, and accessible React components for your React apps.'
 const GITHUBLINK = 'https://github.com/OutpostHQ/sample-doc'
 
 function collectHeadings(node, sections = []) {
   if (node) {
+    // console.log(node)
     if (node.name === 'Heading') {
       const title = node.children[0]
 
