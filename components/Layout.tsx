@@ -53,7 +53,10 @@ export const Layout = ({ children, metaData }) => {
                 {children}
               </Block>
               <Block padding="1rem 2rem">
-                <PageFooter editLink={metaData.editlink} />
+                <PageFooter
+                  current={metaData.title}
+                  editLink={metaData.editlink}
+                />
               </Block>
             </Grid>
             <StickyBlock

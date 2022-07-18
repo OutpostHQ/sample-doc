@@ -1,18 +1,18 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
-import { useRouter } from 'next/router'
-import NextLink from 'next/link'
 import { DocsArray } from '../../utils/DocsArray'
-export const PageFooter = ({ editLink }) => {
-  const router = useRouter()
-  const currentPath = router.pathname
-  let currentIndex = undefined
-  for (let i = 0; i < DocsArray.length; i++) {
-    if (currentPath.endsWith(DocsArray[i].pathname)) {
-      currentIndex = i
-      break
-    }
+export const PageFooter = ({ editLink, current }) => {
+  let currentIndex = -1
+  if (current) {
+    DocsArray.every((item, index) => {
+      if (current.match(new RegExp(item.name))) {
+        currentIndex = index
+        return false
+      }
+      return true
+    })
   }
+  console.log(currentIndex)
   return (
     <Flex
       padding="15px 20px"
@@ -33,13 +33,11 @@ export const PageFooter = ({ editLink }) => {
               <Text>Previous</Text>
               <Space flow="row">
                 <LeftOutlined />
-                <NextLink
-                  href={`/docs/${DocsArray[currentIndex - 1].pathname}`}
-                >
+                <Link to={`/docs/${DocsArray[currentIndex - 1].pathname}`}>
                   <Text weight={'bold'}>
                     {DocsArray[currentIndex - 1].name}
                   </Text>
-                </NextLink>
+                </Link>
               </Space>
             </>
           ) : null}
@@ -49,13 +47,11 @@ export const PageFooter = ({ editLink }) => {
             <>
               <Text>Next</Text>
               <Space flow="row">
-                <NextLink
-                  href={`/docs/${DocsArray[currentIndex + 1].pathname}`}
-                >
+                <Link to={`/docs/${DocsArray[currentIndex + 1].pathname}`}>
                   <Text weight={'bold'}>
                     {DocsArray[currentIndex + 1].name}
                   </Text>
-                </NextLink>
+                </Link>
                 <RightOutlined />
               </Space>
             </>
