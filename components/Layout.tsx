@@ -40,7 +40,7 @@ export const Layout = ({ children, metaData }) => {
             ]}
             display={['initial', , sideNavOpen ? 'initial' : 'none']}
           >
-            <SideNav state={sideNavOpen} setState={toggleSideNav} />
+            <SideNav setState={toggleSideNav} />
           </TastySideNavWrapper>
           <ScrollableYGrid
             gridColumns={['1fr 256px', '1fr']}
