@@ -36,9 +36,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     title: 'Jenga UI',
     description:
       'A fast, reusable, composable, and accessible React components for your React apps.',
-    editlink: '#',
-    pkg: '@jenga-ui/core',
-    source: '#',
+    editlink: null,
+    pkg: null,
+    source: null,
+    header: false,
   }
   const { markdoc } = pageProps
   if (markdoc) {

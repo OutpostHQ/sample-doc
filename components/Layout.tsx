@@ -49,7 +49,7 @@ export const Layout = ({ children, metaData }) => {
           >
             <Grid gridRows={'1fr 200px'}>
               <Block padding={['50px 32px 0 ', '50px 20px 0 ']}>
-                <PageHeader {...metaData} />
+                {metaData.header ? <PageHeader {...metaData} /> : null}
                 {children}
               </Block>
               <Block padding="1rem 2rem">

@@ -4,6 +4,7 @@ description: Buttons allow users to perform an action, make choices, and navigat
 editlink: https://github.com/OutpostHQ/sample-doc/blob/main/pages/index.md
 source: https://github.com/OutpostHQ/jenga-ui/tree/main/packages/atoms/src/button
 pkg: '@jenga-ui/button'
+header: true
 ---
 
 # Hello from button

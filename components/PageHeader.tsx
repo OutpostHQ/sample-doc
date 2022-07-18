@@ -1,9 +1,8 @@
-import { Block, Button, Flex, Space, Text } from '@cube-dev/ui-kit'
+import { Block, Flex, Space } from '@cube-dev/ui-kit'
 import { BorderedClearButton, HOneText, PageDescriptionText } from './tasty'
 import { Link } from '@cube-dev/ui-kit'
 import { GithubIcon } from './icons/GithubIcon'
 const PageHeader = ({ title, description, source, pkg }) => {
-  if (!pkg) return null
   return (
     <Flex flow="column">
       <Block padding={'24px 0'}>
