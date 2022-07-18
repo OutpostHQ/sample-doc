@@ -9,4 +9,4 @@ header: true
 
 # Hello from button
 
-{% astf("buttons/usage") %}
+{% partial file="button/usage.md" /%}
