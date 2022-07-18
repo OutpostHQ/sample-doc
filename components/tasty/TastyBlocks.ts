@@ -25,18 +25,18 @@ const SectionBlock = tasty(Block, {
     marginBottom: '20px',
   },
 })
-const HoveredBlock = styled(Block)`
-  &:hover {
-    background-color: #d7ceff;
-    transform: scale(1.02);
-  }
-  border-radius: 10px;
-`
-const ActiveBlock = tasty(HoveredBlock, {
+// const HoveredBlock = styled(Block)`
+//   &:hover {
+//     background-color: #d7ceff;
+//   }
+//   border-radius: 5px;
+// `
+const ActiveBlock = tasty(Block, {
   styles: {
     fontWeight: 'bold',
     textDecoration: 'none',
     backgroundColor: '#d7ceff',
+    borderRadius: '5px',
   },
 })
 export {
@@ -45,5 +45,5 @@ export {
   SectionBlock,
   NavBlock,
   ActiveBlock,
-  HoveredBlock,
+  //   HoveredBlock,
 }

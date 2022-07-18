@@ -1,9 +1,7 @@
-import { Flex } from '@cube-dev/ui-kit'
-import NextLink from 'next/link'
+import { Button, Flex, Link } from '@cube-dev/ui-kit'
 import { useContext } from 'react'
 import { PathContext } from './PathContext'
 import ToggleBlock from '../ToggleBlock'
-import { SideMenuText } from '../tasty'
 import { NavStateContext } from './NavStateContext'
 export default function NavigationLink({
   item,
@@ -13,18 +11,19 @@ export default function NavigationLink({
   const path = useContext(PathContext)
   const closeNav = useContext(NavStateContext)
   return (
-    <ToggleBlock active={path.endsWith(item.pathname)} onClick={closeNav}>
-      <NextLink href={`/docs/${item.pathname}`}>
-        <Flex
-          padding="3px 0 3px 46px"
-          height="100%"
-          width="100%"
-          alignItems={'center'}
-          justifyContent={'flex-start'}
-        >
-          <SideMenuText>{item.name}</SideMenuText>
-        </Flex>
-      </NextLink>
+    <ToggleBlock active={path.endsWith(item.pathname)} paddingInline="46px 0">
+      <Button
+        type="link"
+        to={`/docs/${item.pathname}`}
+        onPress={closeNav}
+        padding="0.4rem 0"
+        outline="0"
+        color={{
+          hovered: '#primary',
+        }}
+      >
+        {item.name}
+      </Button>
     </ToggleBlock>
   )
 }
