@@ -35,7 +35,12 @@ const SectionTitleText = tasty(Text, {
     fontSize: ['16px', '16px', '18px'],
   },
 })
-
+const PageDescriptionText = tasty(Text, {
+  weight: 400,
+  styles: {
+    fontSize: ['20px', , '21px'],
+  },
+})
 export {
   HeadingText,
   HOneText,
@@ -43,4 +48,5 @@ export {
   HThreeText,
   SectionTitleText,
   SideMenuText,
+  PageDescriptionText,
 }

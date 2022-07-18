@@ -22,7 +22,7 @@ const HeadingWrapper = ({ level, children, ...BlockProps }) => {
       </Block>
     )
 }
-export function Heading({ id = '', level = 1, children, className }) {
+const Heading = ({ id = '', level = 1, children, className }) => {
   return level > 3 ? (
     createElement(
       `h${level}`,
@@ -41,3 +41,4 @@ export function Heading({ id = '', level = 1, children, className }) {
     />
   )
 }
+export { Heading }

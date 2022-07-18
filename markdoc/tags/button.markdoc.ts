@@ -1,6 +1,6 @@
 import { Button } from '@cube-dev/ui-kit'
 
-export default {
+const button = {
   render: Button,
   attributes: {
     isLoading: {
@@ -23,3 +23,5 @@ export default {
     },
   },
 }
+
+export default button

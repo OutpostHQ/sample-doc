@@ -1,6 +1,6 @@
 import { Callout } from '../../components'
 
-export const callout = {
+const callout = {
   render: Callout,
   description: 'Display the enclosed content in a callout box',
   children: ['paragraph', 'tag', 'list'],
@@ -11,3 +11,4 @@ export const callout = {
     },
   },
 }
+export default callout

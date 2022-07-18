@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NextLink from 'next/link'
-import { HOneText, HThreeText, HTwoText, NavBlock } from './tasty'
+import { NavBlock } from './tasty'
 import { Block, Space, Text } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
 import ToggleBlock from './ToggleBlock'

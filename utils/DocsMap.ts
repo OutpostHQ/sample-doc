@@ -34,7 +34,7 @@ const DocsMap = {
     { name: 'Skeleton', pathname: '#' },
     { name: 'Tag', pathname: '#' },
   ],
-  ACTIONS: [{ name: 'Button', pathname: '#' }],
+  ACTIONS: [{ name: 'Button', pathname: 'components/button' }],
   NAVIGATION: [
     { name: 'Tabs', pathname: '#' },
     { name: 'Link', pathname: '#' },

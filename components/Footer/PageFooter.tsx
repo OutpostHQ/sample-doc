@@ -3,7 +3,7 @@ import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { DocsArray } from '../../utils/DocsArray'
-export const PageFooter = ({ githublink }) => {
+export const PageFooter = ({ editLink }) => {
   const router = useRouter()
   const currentPath = router.pathname
   let currentIndex = undefined
@@ -24,7 +24,7 @@ export const PageFooter = ({ githublink }) => {
     >
       <Space flow="row">
         <EditFilled />
-        <Link to={'!' + githublink}>Edit this page on GitHub</Link>
+        <Link to={'!' + editLink}>Edit this page on GitHub</Link>
       </Space>
       <Flex flow="row" justifyContent="space-between">
         <Flex flow="column" alignItems="flex-start" gap={'10px'}>

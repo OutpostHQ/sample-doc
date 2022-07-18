@@ -4,15 +4,11 @@ import Head from 'next/head'
 import { Layout } from '../components/Layout'
 import '../styles/globals.css'
 import '../styles/fonts.css'
-
-const TITLE = 'Jenga UI'
-const DESCRIPTION =
-  'A fast, reusable, composable, and accessible React components for your React apps.'
-const GITHUBLINK = 'https://github.com/OutpostHQ/sample-doc'
+import { Children } from 'react'
+import { PageTabs } from '../components'
 
 function collectHeadings(node, sections = []) {
   if (node) {
-    // console.log(node)
     if (node.name === 'Heading') {
       const title = node.children[0]
 
@@ -35,38 +31,39 @@ function collectHeadings(node, sections = []) {
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  let metaData = {
+    toc: [],
+    title: 'Jenga UI',
+    description:
+      'A fast, reusable, composable, and accessible React components for your React apps.',
+    editlink: '#',
+    pkg: '@jenga-ui/core',
+    source: '#',
+  }
   const { markdoc } = pageProps
-  let title = TITLE
-  let description = DESCRIPTION
-  let githublink = GITHUBLINK
   if (markdoc) {
-    if (markdoc.frontmatter.title) {
-      title = markdoc.frontmatter.title
-    }
-    if (markdoc.frontmatter.description) {
-      description = markdoc.frontmatter.description
-    }
-    if (markdoc.frontmatter.githublink) {
-      githublink = markdoc.frontmatter.githublink
+    if (markdoc.frontmatter) {
+      metaData = { ...markdoc.frontmatter }
+      console.log(metaData)
     }
   }
 
-  const toc = pageProps.markdoc?.content
+  metaData.toc = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
-    : []
+    : Array<string>(0)
 
   return (
     <SSRProvider>
       <Head>
-        <title>{title}</title>
+        <title>{metaData.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
+        <meta name="title" content={`${metaData.title} - Jenga UI`} />
+        <meta name="description" content={metaData.description} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout toc={toc} githublink={githublink}>
+      <Layout metaData={metaData}>
         <Component {...pageProps} />
       </Layout>
     </SSRProvider>

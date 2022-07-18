@@ -28,7 +28,7 @@ export const DocsArray = [
   { name: 'PrismCode', pathname: '#' },
   { name: 'Skeleton', pathname: '#' },
   { name: 'Tag', pathname: '#' },
-  { name: 'Button', pathname: '#' },
+  { name: 'Button', pathname: 'components/button/' },
   { name: 'Tabs', pathname: '#' },
   { name: 'Link', pathname: '#' },
   { name: 'Base64Upload', pathname: '#' },
