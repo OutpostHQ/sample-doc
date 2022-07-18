@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 const PageTabs = ({ children }) => {
   const [activeKey, setActiveKey] = useState('usage')
-  console.log(children, 'sd')
   function onClick(id) {
     setActiveKey(id)
   }
@@ -13,4 +12,9 @@ const PageTabs = ({ children }) => {
     </LegacyTabs>
   )
 }
-export { PageTabs }
+
+const pagetabs = {
+  render: PageTabs,
+  attributes: {},
+}
+export default pagetabs

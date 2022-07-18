@@ -5,7 +5,6 @@ import { Layout } from '../components/Layout'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 import { Children } from 'react'
-import { PageTabs } from '../components'
 
 function collectHeadings(node, sections = []) {
   if (node) {
