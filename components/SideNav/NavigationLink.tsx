@@ -10,8 +10,9 @@ export default function NavigationLink({
 }) {
   const path = useContext(PathContext)
   const closeNav = useContext(NavStateContext)
+  const active = path.endsWith(item.pathname)
   return (
-    <ToggleBlock active={path.endsWith(item.pathname)} paddingInline="46px 0">
+    <ToggleBlock active={active} paddingInline="46px 0">
       <Button
         type="link"
         to={`/docs/${item.pathname}`}
@@ -19,7 +20,7 @@ export default function NavigationLink({
         padding="0.4rem 0"
         outline="0"
         color={{
-          hovered: '#primary',
+          hovered: !active ? '#primary' : '',
         }}
       >
         {item.name}
