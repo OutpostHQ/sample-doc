@@ -23,7 +23,7 @@ export default function NavigationLink({
           justifyContent={'flex-start'}
         >
           <SideMenuText>
-            <a onClick={closeNav}>{item.name}</a>
+            <div onClick={closeNav}>{item.name}</div>
           </SideMenuText>
         </Flex>
       </NextLink>
