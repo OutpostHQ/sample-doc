@@ -12,7 +12,7 @@ const I18N = {
 }
 module.exports = withPlugins(
   [
-    withMarkdoc(/* config: https://markdoc.io/docs/nextjs#options */)({
+    withMarkdoc({ mode: 'static' })({
       pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdoc'],
     }),
   ],

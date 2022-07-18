@@ -9,4 +9,8 @@ header: true
 
 # Hello from button
 
-{% partial file="button/usage.md" /%}
+{% pagetabs %}
+{% tabpane title="Usage" key="usage" id="usage" %} {% partial file="button/usage.md" /%} {% /tabpane %}
+{% tabpane title="Props" key="props" id="props" %} {% partial file="button/props.md" /%} {% /tabpane %}
+{% tabpane title="Design" key="design" id="design" %} {% partial file="button/design.md" /%} {% /tabpane %}
+{% /pagetabs %}
