@@ -10,12 +10,16 @@ const PageHeader = ({ title, description, source, pkg }) => {
       </Block>
       <PageDescriptionText>{description}</PageDescriptionText>
       <Space flow="row" gap={'16px'} padding={'20px 0 32px'}>
-        <Link href={source} as="a">
+        <Link to={source} as="a" target="_blank">
           <BorderedClearButton icon={<GithubIcon />}>
             Source
           </BorderedClearButton>
         </Link>{' '}
-        <Link href={`https://www.npmjs.com/package${pkg}`} as="a">
+        <Link
+          to={`https://www.npmjs.com/package/${pkg}`}
+          as="a"
+          target="_blank"
+        >
           <BorderedClearButton icon={<GithubIcon />}>{pkg}</BorderedClearButton>
         </Link>
       </Space>
