@@ -6,7 +6,7 @@ const button = {
     isLoading: {
       type: Boolean,
     },
-    icons: {
+    icon: {
       type: String,
     },
     isSelected: {
@@ -20,6 +20,9 @@ const button = {
     },
     isDisabled: {
       type: Boolean,
+    },
+    size: {
+      type: String,
     },
   },
 }

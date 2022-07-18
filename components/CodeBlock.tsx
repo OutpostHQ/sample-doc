@@ -7,6 +7,7 @@ export function CodeBlock({ children, language }) {
       code={children}
       language={language}
       prefix={language === 'bash' && '$'}
+      margin="20px 0"
     />
   )
 }

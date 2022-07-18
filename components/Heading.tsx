@@ -5,19 +5,19 @@ import { HOneText, HThreeText, HTwoText } from './tasty'
 const HeadingWrapper = ({ level, children, ...BlockProps }) => {
   if (level === 1)
     return (
-      <Block padding={'24px 0'} {...BlockProps}>
+      <Block margin={'24px 0'} {...BlockProps}>
         <HOneText>{children}</HOneText>
       </Block>
     )
   else if (level === 2)
     return (
-      <Block padding={'20px 0 0'} {...BlockProps}>
+      <Block margin={'40px 0 25px'} {...BlockProps}>
         <HTwoText>{children}</HTwoText>
       </Block>
     )
   else
     return (
-      <Block padding={'20px 0 0'} {...BlockProps}>
+      <Block margin={'30px 0 20px 0'} {...BlockProps}>
         <HThreeText>{children}</HThreeText>
       </Block>
     )
