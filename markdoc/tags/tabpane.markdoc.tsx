@@ -5,7 +5,6 @@ const capitalize = (s) => (s && s[0].toUpperCase() + s.slice(1)) || ''
 
 const TabPane = ({ type, children }: { type: PaneTypes; children: any }) => {
   const title = capitalize(type)
-  console.log(title)
   return (
     <LegacyTabs.TabPane title={title} key={type} id={type}>
       {children}

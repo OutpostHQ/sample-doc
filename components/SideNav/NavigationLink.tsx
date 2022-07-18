@@ -13,18 +13,16 @@ export default function NavigationLink({
   const path = useContext(PathContext)
   const closeNav = useContext(NavStateContext)
   return (
-    <ToggleBlock active={path.endsWith(item.pathname)}>
+    <ToggleBlock active={path.endsWith(item.pathname)} onClick={closeNav}>
       <NextLink href={`/docs/${item.pathname}`}>
         <Flex
           padding="3px 0 3px 46px"
           height="100%"
-          width={'100%'}
+          width="100%"
           alignItems={'center'}
           justifyContent={'flex-start'}
         >
-          <SideMenuText>
-            <div onClick={closeNav}>{item.name}</div>
-          </SideMenuText>
+          <SideMenuText>{item.name}</SideMenuText>
         </Flex>
       </NextLink>
     </ToggleBlock>

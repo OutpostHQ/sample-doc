@@ -7,8 +7,6 @@ pkg: '@jenga-ui/button'
 header: true
 ---
 
-# Hello from button
-
 {% pagetabs %}
 {% tabpane type="usage" %} {% partial file="button/usage.md" /%} {% /tabpane %}
 {% tabpane type="props" %} {% partial file="button/props.md" /%} {% /tabpane %}

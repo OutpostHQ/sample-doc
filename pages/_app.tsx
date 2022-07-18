@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { Layout } from '../components/Layout'
 import '../styles/globals.css'
 import '../styles/fonts.css'
-import { Children } from 'react'
 
 function collectHeadings(node, sections = []) {
   if (node) {
@@ -42,6 +41,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }
   const { markdoc } = pageProps
   if (markdoc) {
+    console.log(markdoc)
     if (markdoc.frontmatter) {
       metaData = { ...markdoc.frontmatter }
       console.log(metaData)

@@ -1,4 +1,5 @@
 import { Block, tasty } from '@cube-dev/ui-kit'
+import styled from 'styled-components'
 const NavBlock = tasty(Block, {
   as: 'nav',
 })
@@ -24,13 +25,25 @@ const SectionBlock = tasty(Block, {
     marginBottom: '20px',
   },
 })
-const ActiveBlock = tasty(Block, {
+const HoveredBlock = styled(Block)`
+  &:hover {
+    background-color: #d7ceff;
+    transform: scale(1.02);
+  }
+  border-radius: 10px;
+`
+const ActiveBlock = tasty(HoveredBlock, {
   styles: {
-    scale: 1.02,
     fontWeight: 'bold',
     textDecoration: 'none',
-    backgroundColor: '#primary.20',
-    borderRadius: '10px',
+    backgroundColor: '#d7ceff',
   },
 })
-export { StickyBlock, TastySideNavWrapper, SectionBlock, NavBlock, ActiveBlock }
+export {
+  StickyBlock,
+  TastySideNavWrapper,
+  SectionBlock,
+  NavBlock,
+  ActiveBlock,
+  HoveredBlock,
+}
