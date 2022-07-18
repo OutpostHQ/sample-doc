@@ -22,7 +22,6 @@ const SectionBlock = tasty(Block, {
   flow: 'column',
   styles: {
     marginBottom: '20px',
-    marginLeft: ['0', '20px'],
   },
 })
 const ActiveBlock = tasty(Block, {
