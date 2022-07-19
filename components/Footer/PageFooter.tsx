@@ -1,7 +1,7 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
-import { DocsArray } from '../../utils/DocsArray'
 export const PageFooter = ({ editLink, current }) => {
+  const DocsArray = JSON.parse(process.env.DOCARRAY) || []
   let currentIndex = -1
   if (current) {
     DocsArray.every((item, index) => {
@@ -12,7 +12,6 @@ export const PageFooter = ({ editLink, current }) => {
       return true
     })
   }
-  console.log(currentIndex)
   return (
     <Flex
       padding="15px 20px"

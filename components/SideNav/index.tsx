@@ -10,8 +10,7 @@ export function SideNav({
 }: {
   setState: Dispatch<SetStateAction<boolean>>
 }) {
-  console.log(process.env.docmap)
-  const DocsMap = process.env.docmap || {}
+  const DocsMap = JSON.parse(process.env.DOCMAP) || {}
   const router = useRouter()
   const sections = Object.keys(DocsMap)
   return (

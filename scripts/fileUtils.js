@@ -35,7 +35,7 @@ let docSortedTemplate = {
  * @returns {object} components in the 'pages/docs/' folder
  * @author Ajeya Bhat <ajeyabhat.off@gmail.com>
  */
-const getDocMap = () => {
+const getDocPathUtils = () => {
   const docPathPrefix = appRoot.path + '/pages/docs/'
   const docFiles = []
   const DocMap = {}
@@ -64,9 +64,15 @@ const getDocMap = () => {
     if (DocMap.hasOwnProperty(i)) docSortedTemplate[i] = DocMap[i]
     else delete docSortedTemplate[i]
   }
-  return docSortedTemplate
+  const DocArray = []
+  for (let key of Object.keys(docSortedTemplate))
+    DocArray.push(...docSortedTemplate[key])
+  return {
+    docsmap: JSON.stringify(docSortedTemplate),
+    docsarray: JSON.stringify(DocArray),
+  }
 }
-console.log(getDocMap())
+console.log(getDocPathUtils())
 module.exports = {
-  getDocMap: getDocMap,
+  getDocPathUtils: getDocPathUtils,
 }
