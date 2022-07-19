@@ -1,6 +1,5 @@
 import { Block, Flex, Space } from '@cube-dev/ui-kit'
-import { BorderedClearButton, HOneText, PageDescriptionText } from './tasty'
-import { Link } from '@cube-dev/ui-kit'
+import { BorderedClearLink, HOneText, PageDescriptionText } from './tasty'
 import { GithubIcon } from './icons/GithubIcon'
 const PageHeader = ({ title, description, source, pkg }) => {
   return (
@@ -10,18 +9,26 @@ const PageHeader = ({ title, description, source, pkg }) => {
       </Block>
       <PageDescriptionText>{description}</PageDescriptionText>
       <Space flow="row" gap={'16px'} padding={'20px 0 32px'}>
-        <Link to={source} as="a" target="_blank">
-          <BorderedClearButton icon={<GithubIcon />}>
-            Source
-          </BorderedClearButton>
-        </Link>{' '}
-        <Link
-          to={`https://www.npmjs.com/package/${pkg}`}
-          as="a"
+        <BorderedClearLink
+          to={source}
           target="_blank"
+          type="clear"
+          icon={<GithubIcon />}
         >
-          <BorderedClearButton icon={<GithubIcon />}>{pkg}</BorderedClearButton>
-        </Link>
+          Source
+        </BorderedClearLink>{' '}
+        <BorderedClearLink
+          to={`https://www.npmjs.com/package/${pkg}`}
+          target="_blank"
+          type="clear"
+          icon={<GithubIcon />}
+          styles={{
+            border: '1px solid #primary.20',
+            borderRadius: '8px',
+          }}
+        >
+          {pkg}
+        </BorderedClearLink>
       </Space>
     </Flex>
   )

@@ -8,15 +8,15 @@ import { ScrollableYGrid, StickyBlock, TastySideNavWrapper } from './tasty'
 import { useState } from 'react'
 import { PageFooter, SiteFooter } from './Footer'
 import { PageHeader } from './PageHeader'
-export const Layout = ({ children, metaData }) => {
+export const Layout = ({ children, frontmatter }) => {
   const Router = useRouter()
   const [sideNavOpen, toggleSideNav] = useState(false)
   return (
     <BreakpointsProvider value={[1200, 640]}>
       <Root
         styles={TOKENS}
-        fonts={false}
         router={Router}
+        fonts={false}
         font="SFProDisplay"
         monospaceFont="SFMono"
       >
@@ -28,6 +28,8 @@ export const Layout = ({ children, metaData }) => {
           ]}
           gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
           height="100vh"
+          color={'#2B2962'}
+          fill={'#F5F5F5'}
         >
           <StickyBlock gridColumn="1 / -1" border="bottom">
             <TopBar sideNavOpen={sideNavOpen} setSideNavOpen={toggleSideNav} />
@@ -49,13 +51,15 @@ export const Layout = ({ children, metaData }) => {
           >
             <Grid gridRows={'1fr 200px'}>
               <Block padding={['50px 32px 0 ', '50px 20px 0 ']}>
-                {metaData.header ? <PageHeader {...metaData} /> : null}
+                {frontmatter.type === 'component' ? (
+                  <PageHeader {...frontmatter} />
+                ) : null}
                 {children}
               </Block>
               <Block padding="1rem 2rem">
                 <PageFooter
-                  current={metaData.title}
-                  editLink={metaData.editlink}
+                  current={frontmatter.title}
+                  editLink={frontmatter.editlink}
                 />
               </Block>
             </Grid>
@@ -66,7 +70,7 @@ export const Layout = ({ children, metaData }) => {
                 borderBottom: 'none',
               }}
             >
-              <TableOfContents toc={metaData.toc} />
+              <TableOfContents toc={frontmatter.toc} />
             </StickyBlock>
             <Block gridColumn="1 / -1" border="top">
               <SiteFooter />

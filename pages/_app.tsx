@@ -29,7 +29,8 @@ function collectHeadings(node, sections = []) {
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  let metaData = {
+  let frontmatter = {
+    type: null,
     toc: [],
     title: 'Jenga UI',
     description:
@@ -41,28 +42,30 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }
   const { markdoc } = pageProps
   if (markdoc) {
-    console.log(markdoc)
     if (markdoc.frontmatter) {
-      metaData = { ...markdoc.frontmatter }
+      for (let i of Object.keys(markdoc.frontmatter)) {
+        if (frontmatter.hasOwnProperty(i))
+          frontmatter[i] = markdoc.frontmatter[i]
+      }
     }
   }
 
-  metaData.toc = pageProps.markdoc?.content
+  frontmatter.toc = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : Array<string>(0)
 
   return (
     <SSRProvider>
       <Head>
-        <title>{metaData.title}</title>
+        <title>{frontmatter.title} - Jenga UI</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
-        <meta name="title" content={`${metaData.title} - Jenga UI`} />
-        <meta name="description" content={metaData.description} />
+        <meta name="title" content={`${frontmatter.title} - Jenga UI`} />
+        <meta name="description" content={frontmatter.description} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout metaData={metaData}>
+      <Layout frontmatter={frontmatter}>
         <Component {...pageProps} />
       </Layout>
     </SSRProvider>

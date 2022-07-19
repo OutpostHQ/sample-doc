@@ -1,5 +1,5 @@
 ---
-header: false
+type: doc
 ---
 
 # Hello from Base

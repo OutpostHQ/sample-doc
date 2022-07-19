@@ -7,12 +7,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 a {
   all: unset;
 }
 body {
-  color: rgba(60, 66, 87, 1);
+  color: rgb(43, 41, 98);
   margin: 0;
 }
 html {
