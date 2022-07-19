@@ -4,9 +4,8 @@ import DocsMap from '../../utils/DocsMap'
 import NavigationSection from './NavigationSection'
 import { SectionBlock } from '../tasty'
 import { useRouter } from 'next/router'
-import { PathContext } from './PathContext'
 import SectionTitle from './SectionTitle'
-import { NavStateContext } from './NavStateContext'
+import { NavStateContext, PathContext } from './NavContexts'
 export function SideNav({
   setState,
 }: {

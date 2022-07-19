@@ -1,8 +1,7 @@
-import { Button, Flex, Link } from '@cube-dev/ui-kit'
+import { Button } from '@cube-dev/ui-kit'
 import { useContext } from 'react'
-import { PathContext } from './PathContext'
 import ToggleBlock from '../ToggleBlock'
-import { NavStateContext } from './NavStateContext'
+import { PathContext, NavStateContext } from './NavContexts'
 export default function NavigationLink({
   item,
 }: {
