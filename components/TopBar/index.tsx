@@ -23,7 +23,11 @@ export function TopBar({
         alignItems="center"
         padding={['0.6rem 0.4rem', , ' 0.25rem 0.1rem']}
       >
-        <Flex alignItems="center" gap={['2vw ', '1vw', '0.5rem']}>
+        <Flex
+          alignItems="center"
+          gap={['2vw ', '1vw', '0.5rem']}
+          fill=" #F5F5F5"
+        >
           <Link type="undefined" to="/" label="home" size={'small'}>
             <MainLogo />
           </Link>

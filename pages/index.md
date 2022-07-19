@@ -2,7 +2,7 @@
 title: Jenga UI
 description: how to get started with Jenga UI
 editlink: https://github.com/OutpostHQ/sample-doc/blob/main/pages/index.md
-type: none
+type: doc
 ---
 
 # Full Next.js example
