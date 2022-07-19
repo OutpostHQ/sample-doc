@@ -14,10 +14,11 @@
     "@react-aria/ssr": "^3.2.0",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
-    "prismjs": "^1.28.0",
     "react": "latest",
     "react-dom": "latest",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "app-root-path": "^3.0.0",
+    "change-case": "^4.1.2"
   },
   "devDependencies": {
     "@types/node": "latest",

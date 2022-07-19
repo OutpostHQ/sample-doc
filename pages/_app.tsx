@@ -44,7 +44,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     console.log(markdoc)
     if (markdoc.frontmatter) {
       metaData = { ...markdoc.frontmatter }
-      console.log(metaData)
     }
   }
 

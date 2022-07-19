@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
 import { Block } from '@cube-dev/ui-kit'
-import DocsMap from '../../utils/DocsMap'
 import NavigationSection from './NavigationSection'
 import { SectionBlock } from '../tasty'
 import { useRouter } from 'next/router'
@@ -11,6 +10,8 @@ export function SideNav({
 }: {
   setState: Dispatch<SetStateAction<boolean>>
 }) {
+  console.log(process.env.docmap)
+  const DocsMap = process.env.docmap || {}
   const router = useRouter()
   const sections = Object.keys(DocsMap)
   return (
@@ -24,7 +25,9 @@ export function SideNav({
           {sections.map((section) => {
             return (
               <SectionBlock key={section}>
-                <SectionTitle>{section}</SectionTitle>
+                {section !== 'MAIN' ? (
+                  <SectionTitle>{section}</SectionTitle>
+                ) : null}
                 <NavigationSection sectionItems={DocsMap[section]} />
               </SectionBlock>
             )
