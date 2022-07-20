@@ -1,17 +1,15 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
-export const PageFooter = ({ editLink, current }) => {
+import { useRouter } from 'next/router'
+export const PageFooter = ({ editLink }) => {
+  //from /docs/cat/file/usage  to cat/file or /docs/file to file
+  let pathChunk = useRouter()
+    .pathname.replace('/docs/', '')
+    .replace('/usage', '')
   const DocsArray = JSON.parse(process.env.DOCARRAY) || []
-  let currentIndex = -1
-  if (current) {
-    DocsArray.every((item, index) => {
-      if (current.match(new RegExp(item.name))) {
-        currentIndex = index
-        return false
-      }
-      return true
-    })
-  }
+  let currentIndex = DocsArray.findIndex(
+    (docItem) => docItem.pathname.replace('/usage', '') == pathChunk
+  )
   return (
     <Flex
       padding="15px 20px"

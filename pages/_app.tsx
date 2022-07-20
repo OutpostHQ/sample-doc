@@ -1,7 +1,8 @@
 import { SSRProvider } from '@react-aria/ssr'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Layout } from '../components/Layout'
+import Layout from '../components/Layouts'
+import CompDetails from '../utils/ComponentDetails'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 
@@ -29,45 +30,61 @@ function collectHeadings(node, sections = []) {
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  let frontmatter = {
-    type: null,
+  let frontmatter: {
+    type: 'generic' | 'doc' | 'doc-component' | 'blog'
+    toc: any[]
+    id?: number
+    scope?: 'usage' | 'props' | 'design'
+    title?: string
+    description?: string
+  } = {
+    type: 'generic',
     toc: [],
-    title: 'Jenga UI',
-    description:
-      'A fast, reusable, composable, and accessible React components for your React apps.',
-    editlink: null,
-    pkg: null,
-    source: null,
-    header: false,
+    title: '404',
+    description: 'None',
   }
+
   const { markdoc } = pageProps
   if (markdoc) {
     if (markdoc.frontmatter) {
+      const isComponent = markdoc.frontmatter.type === 'doc-component'
       for (let i of Object.keys(markdoc.frontmatter)) {
-        if (frontmatter.hasOwnProperty(i))
-          frontmatter[i] = markdoc.frontmatter[i]
+        frontmatter[i] = markdoc.frontmatter[i]
+      }
+      if (isComponent) {
+        const customFront = CompDetails.get(frontmatter.id)
+        console.log(customFront)
+        for (let i of Object.keys(customFront)) {
+          frontmatter[i] = customFront[i]
+        }
       }
     }
+    frontmatter.toc = pageProps.markdoc?.content
+      ? collectHeadings(pageProps.markdoc.content)
+      : Array<string>(0)
+    console.log(frontmatter.toc)
   }
-
-  frontmatter.toc = pageProps.markdoc?.content
-    ? collectHeadings(pageProps.markdoc.content)
-    : Array<string>(0)
-
   return (
     <SSRProvider>
       <Head>
-        <title>{frontmatter.title} - Jenga UI</title>
+        <title>{frontmatter.title + ' - Jenga UI'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
-        <meta name="title" content={`${frontmatter.title} - Jenga UI`} />
-        <meta name="description" content={frontmatter.description} />
+        <meta
+          name="title"
+          content={`${frontmatter.title + ' - ' || ''}Jenga UI`}
+        />
+        <meta name="description" content={frontmatter.description || ''} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout frontmatter={frontmatter}>
+      {markdoc ? (
+        <Layout frontmatter={frontmatter}>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
         <Component {...pageProps} />
-      </Layout>
+      )}
     </SSRProvider>
   )
 }

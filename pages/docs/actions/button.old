@@ -1,0 +1,10 @@
+---
+type: doc
+id: 1
+---
+
+{% pagetabs %}
+{% tabpane type="usage" %} {% partial file="button/usage.md" /%} {% /tabpane %}
+{% tabpane type="props" %} {% partial file="button/props.md" /%} {% /tabpane %}
+{% tabpane type="design" %} {% partial file="button/design.md" /%} {% /tabpane %}
+{% /pagetabs %}

@@ -1,3 +1,9 @@
+---
+type: doc-component
+id: 1
+scope: usage
+---
+
 ## Import
 
 ```js

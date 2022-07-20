@@ -2,7 +2,12 @@ const fs = require('fs')
 const path = require('path')
 const ccase = require('change-case')
 var appRoot = require('app-root-path')
-
+/**
+ *
+ * @param {*} directory directory to search in
+ * @param {*} files array to store the required paths in
+ * @deprecated
+ */
 const getFilesRecursively = (directory, files = []) => {
   const filesInDirectory = fs.readdirSync(directory)
   for (const file of filesInDirectory) {
@@ -15,6 +20,35 @@ const getFilesRecursively = (directory, files = []) => {
     }
   }
 }
+
+/**
+ *
+ * @param {*} directory directory to search
+ * @returns {string[]}
+ */
+const getFilesTwoDeep = (directory) => {
+  //empty path array
+  let files = []
+  //walk docs folder
+  const filesInDirectory = fs.readdirSync(directory)
+  for (const file of filesInDirectory) {
+    if (file === 'index.md') continue
+    const absolute = path.join(directory, file)
+    //go into category
+    if (fs.statSync(absolute).isDirectory()) {
+      const filesInDeepDirectory = fs.readdirSync(absolute)
+      for (const deepFile of filesInDeepDirectory) {
+        const newAbsolute = path.join(absolute, deepFile)
+        if (fs.statSync(newAbsolute).isDirectory()) {
+          files.push(newAbsolute)
+        }
+      }
+    } //main pages
+    else files.push(absolute)
+  }
+  return files
+}
+// console.log(getFilesTwoDeep(appRoot.path + '/pages/docs/'))
 
 let docSortedTemplate = {
   MAIN: null,
@@ -30,16 +64,15 @@ let docSortedTemplate = {
   GENERIC: null,
 }
 /**
- * @function getDocMap
+ * @function getDocPathUtils
  *
- * @returns {object} components in the 'pages/docs/' folder
+ * @returns {object} map and array of components in the 'pages/docs/' folder
  * @author Ajeya Bhat <ajeyabhat.off@gmail.com>
  */
 const getDocPathUtils = () => {
   const docPathPrefix = appRoot.path + '/pages/docs/'
-  const docFiles = []
+  const docFiles = getFilesTwoDeep(docPathPrefix)
   const DocMap = {}
-  getFilesRecursively(docPathPrefix, docFiles)
   docFiles.forEach((file) => {
     const pathChunk = String(file).replace(docPathPrefix, '').replace('.md', '')
     const pathArray = pathChunk.split('/')
@@ -56,7 +89,7 @@ const getDocPathUtils = () => {
       if (!DocMap.hasOwnProperty(uCategory)) DocMap[uCategory] = []
       DocMap[uCategory].push({
         name: ccase.capitalCase(pathArray[1].replace('-', ' ')),
-        pathname: pathChunk,
+        pathname: pathChunk + '/usage',
       })
     }
   })

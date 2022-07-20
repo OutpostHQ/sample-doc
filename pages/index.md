@@ -1,8 +1,8 @@
 ---
-title: Jenga UI
+title: Index
 description: how to get started with Jenga UI
 editlink: https://github.com/OutpostHQ/sample-doc/blob/main/pages/index.md
-type: doc
+type: gen
 ---
 
 # Full Next.js example

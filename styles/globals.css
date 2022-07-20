@@ -356,3 +356,10 @@ svg {
     opacity, box-shadow, transform;
   transition-duration: 200ms;
 }
+
+code > span.token.operator {
+  color: #f6a2d4;
+}
+code {
+  color: linear-gradient(0deg, #8ccdc0, #8ccdc0);
+}

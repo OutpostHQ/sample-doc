@@ -1,7 +1,41 @@
-import { Block, Flex, Space } from '@cube-dev/ui-kit'
-import { BorderedClearLink, HOneText, PageDescriptionText } from './tasty'
+import { Block, Flex, Space, Text } from '@cube-dev/ui-kit'
+import {
+  BorderedClearLink,
+  BorderedSpace,
+  HOneText,
+  PageDescriptionText,
+} from './tasty'
 import { GithubIcon } from './icons/GithubIcon'
-const PageHeader = ({ title, description, source, pkg }) => {
+import CompDetails from '../utils/ComponentDetails'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+const PageHeader = ({ id, scope }) => {
+  const fullpath = useRouter().pathname
+  const pathChunk = fullpath
+    .replace('/usage', '')
+    .replace('/design', '')
+    .replace('/props', '')
+  const { title, description, source, pkg } = CompDetails.get(id)
+
+  const ToggledLink = (pagetab) => {
+    return (
+      <Link href={`${pathChunk}/${pagetab}`}>
+        <Text
+          color={fullpath.endsWith(pagetab) ? '#dark.900' : 'initial'}
+          styles={{
+            borderBottom: `${
+              fullpath.endsWith(pagetab) ? '3px solid #primary.900' : 'initial'
+            }`,
+            transition: '2s',
+            textTransform: 'capitalize',
+          }}
+        >
+          {pagetab}
+        </Text>
+      </Link>
+    )
+  }
+
   return (
     <Flex flow="column">
       <Block padding={'24px 0'}>
@@ -30,7 +64,13 @@ const PageHeader = ({ title, description, source, pkg }) => {
           {pkg}
         </BorderedClearLink>
       </Space>
+      <BorderedSpace>
+        {ToggledLink('usage')}
+        {ToggledLink('props')}
+        {ToggledLink('design')}
+      </BorderedSpace>
     </Flex>
   )
 }
+
 export { PageHeader }
