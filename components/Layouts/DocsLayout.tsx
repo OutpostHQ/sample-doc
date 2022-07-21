@@ -59,13 +59,9 @@ const MainContent = ({ children, frontmatter }) => {
   const title = isComponent
     ? CompDetails.get(frontmatter.id).title
     : frontmatter.title
-  const editLink = isComponent
-    ? CompDetails.get(frontmatter.id).editlink
-    : frontmatter.editLink
-  console.log(title, editLink)
   return (
     <Grid gridRows={'1fr 200px'}>
-      <Block padding={['50px 32px 0 ', '50px 20px 0 ']}>
+      <Block padding={['50px 60px 0 ', '50px 30px 0 ', '50px 20px 0 ']}>
         {isComponent ? (
           <PageHeader id={frontmatter.id} scope={frontmatter.scope} />
         ) : null}
@@ -73,9 +69,7 @@ const MainContent = ({ children, frontmatter }) => {
       </Block>
 
       <Block padding="1rem 2rem">
-        <PageFooter
-          editLink={editLink + (isComponent ? frontmatter.scope : '')}
-        />
+        <PageFooter />
       </Block>
     </Grid>
   )

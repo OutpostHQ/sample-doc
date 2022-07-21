@@ -1,15 +1,16 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
-export const PageFooter = ({ editLink }) => {
+export const PageFooter = () => {
   //from /docs/cat/file/usage  to cat/file or /docs/file to file
-  let pathChunk = useRouter()
-    .pathname.replace('/docs/', '')
-    .replace('/usage', '')
+  const router = useRouter()
+  let pathChunk = router.pathname.replace('/docs/', '')
   const DocsArray = JSON.parse(process.env.DOCARRAY) || []
   let currentIndex = DocsArray.findIndex(
     (docItem) => docItem.pathname.replace('/usage', '') == pathChunk
   )
+  // const lastPath = useRouter().pathname.split('/').at(-1)
+  // const lastPath = pathArray[pathArray.length - 1]
   return (
     <Flex
       padding="15px 20px"
@@ -21,7 +22,13 @@ export const PageFooter = ({ editLink }) => {
     >
       <Space flow="row">
         <EditFilled />
-        <Link to={'!' + editLink}>Edit this page on GitHub</Link>
+        <Link
+          to={`!https://github.com/OutpostHQ/sample-doc/tree/main/pages${
+            router.asPath !== '/' ? router.asPath : '/index'
+          }.md`}
+        >
+          Edit this page on GitHub
+        </Link>
       </Space>
       <Flex flow="row" justifyContent="space-between">
         <Flex flow="column" alignItems="flex-start" gap={'10px'}>

@@ -1,6 +1,6 @@
 /* Use this file to export your Markdoc functions */
 
-export const includes = {
+const includes = {
   transform(parameters) {
     const [array, value] = Object.values(parameters)
 
@@ -8,9 +8,11 @@ export const includes = {
   },
 }
 
-export const upper = {
+const upper = {
   transform(parameters) {
     const string = parameters[0]
     return typeof string === 'string' ? string.toUpperCase() : string
   },
 }
+export { includes, upper }
+export default includes

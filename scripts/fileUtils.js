@@ -105,7 +105,7 @@ const getDocPathUtils = () => {
     docsarray: JSON.stringify(DocArray),
   }
 }
-console.log(getDocPathUtils())
+// console.log(getDocPathUtils())
 module.exports = {
   getDocPathUtils: getDocPathUtils,
 }

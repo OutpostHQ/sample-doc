@@ -58,7 +58,7 @@ const MainContent = ({ children, frontmatter }) => {
       <Block padding={['50px 32px 0 ', '50px 20px 0 ']}>{children}</Block>
 
       <Block padding="1rem 2rem">
-        <PageFooter editLink={frontmatter.editLink} />
+        <PageFooter />
       </Block>
     </Grid>
   )

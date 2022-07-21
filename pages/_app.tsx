@@ -53,7 +53,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       }
       if (isComponent) {
         const customFront = CompDetails.get(frontmatter.id)
-        console.log(customFront)
         for (let i of Object.keys(customFront)) {
           frontmatter[i] = customFront[i]
         }
@@ -62,7 +61,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     frontmatter.toc = pageProps.markdoc?.content
       ? collectHeadings(pageProps.markdoc.content)
       : Array<string>(0)
-    console.log(frontmatter.toc)
+    // console.log(frontmatter.toc)
   }
   return (
     <SSRProvider>

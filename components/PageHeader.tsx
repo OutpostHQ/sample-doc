@@ -21,7 +21,7 @@ const PageHeader = ({ id, scope }) => {
     return (
       <Link href={`${pathChunk}/${pagetab}`}>
         <Text
-          color={fullpath.endsWith(pagetab) ? '#dark.900' : 'initial'}
+          color={fullpath.endsWith(pagetab) ? '#primary.900' : 'initial'}
           styles={{
             borderBottom: `${
               fullpath.endsWith(pagetab) ? '3px solid #primary.900' : 'initial'
@@ -43,17 +43,11 @@ const PageHeader = ({ id, scope }) => {
       </Block>
       <PageDescriptionText>{description}</PageDescriptionText>
       <Space flow="row" gap={'16px'} padding={'20px 0 32px'}>
-        <BorderedClearLink
-          to={source}
-          target="_blank"
-          type="clear"
-          icon={<GithubIcon />}
-        >
+        <BorderedClearLink to={'!' + source} type="clear" icon={<GithubIcon />}>
           Source
         </BorderedClearLink>{' '}
         <BorderedClearLink
-          to={`https://www.npmjs.com/package/${pkg}`}
-          target="_blank"
+          to={`!https://www.npmjs.com/package/${pkg}`}
           type="clear"
           icon={<GithubIcon />}
           styles={{
