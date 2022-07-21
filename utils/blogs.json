@@ -36,15 +36,6 @@
     "image": "image_blog1.png"
   },
   {
-    "title": "What is AWS Lambda",
-    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
-    "time_created": "4 March 2022",
-    "time_to_read": "6 minutes",
-    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
-    "type": "Community",
-    "image": "image_blog2.png"
-  },
-  {
     "title": "Guide to Serverless Computing",
     "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
     "time_created": "4 March 2022",
@@ -60,7 +51,7 @@
     "time_to_read": "6 minutes",
     "writers": ["Shubham Kaushal", "Shalini Kaushal"],
     "type": "Community",
-    "image": "image_blog1.png"
+    "image": "image_blog2.png"
   },
   {
     "title": "Why Create Serverless Apps?",
@@ -71,6 +62,17 @@
     "image": "image_blog2.png",
     "type": "Product"
   },
+
+  {
+    "title": "What is AWS Lambda",
+    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
+    "type": "Community",
+    "image": "image_blog1.png"
+  },
+
   {
     "title": "Guide to Serverless Computing",
     "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",

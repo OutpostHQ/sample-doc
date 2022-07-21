@@ -9,8 +9,7 @@ export function BlogCard({ blog, main }) {
     <Flex
       gap="20px"
       flow={main ? 'row' : 'column'}
-      width={main ? '100%' : '340px'}
-      height={main ? '340px' : '450px'}
+      width={main ? '100%' : ['380px', '320px', '300px']}
       padding="20px"
       flexShrink="0"
     >
@@ -19,23 +18,22 @@ export function BlogCard({ blog, main }) {
         radius="10px"
         flexShrink="0"
         height={main ? '300px' : '180px'}
+        width={main ? '600px' : '(360px-40px)'}
       >
         <img
           src={'/images/' + blog.image}
           style={{
             objectFit: 'cover',
-            objectPosition: 'center',
-            height: '100%',
             width: '100%',
+            height: '100%',
           }}
         />
       </Block>
-      <Flex flow="column" height="300px" justifyContent="space-between">
+      <Flex flow="column" gap="20px" justifyContent="space-between">
         <Button
           radius="100px"
-          width="85px"
-          flexGrow="0"
-          padding="4px 6px"
+          placeSelf="flex-start"
+          padding="4px 8px"
           type="outline"
         >
           {blog.type}
@@ -53,8 +51,6 @@ export function BlogCard({ blog, main }) {
           <Block
             width={blog.writers.length === 1 ? '40px' : '70px'}
             height="40px"
-            fill="#black.08"
-            radius="50%"
           >
             {blog.writers.length === 1 ? (
               <SingleUserAvatar />
