@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Why Create Serverless Apps?",
+    "description": "Serverless apps are easier maintain and scale, since the resources necessary to complete a request  fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most common workloads.",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "type": "Product",
+    "image": "image_blog1.png"
+  },
+  {
+    "title": "What is AWS Lambda",
+    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
+    "type": "Community",
+    "image": "image_blog2.png"
+  },
+  {
+    "title": "Guide to Serverless Computing",
+    "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "type": "Engineering",
+    "image": "image_blog3.png"
+  },
+  {
+    "title": "Why Create Serverless Apps?",
+    "description": "Serverless apps are easier maintain and scale, since the resources necessary to complete a request  fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most common workloads.",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "type": "Product",
+    "image": "image_blog1.png"
+  },
+  {
+    "title": "What is AWS Lambda",
+    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
+    "type": "Community",
+    "image": "image_blog2.png"
+  },
+  {
+    "title": "Guide to Serverless Computing",
+    "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "type": "Engineering",
+    "image": "image_blog3.png"
+  },
+  {
+    "title": "What is AWS Lambda",
+    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
+    "type": "Community",
+    "image": "image_blog1.png"
+  },
+  {
+    "title": "Why Create Serverless Apps?",
+    "description": "Serverless apps are easier maintain and scale, since the resources necessary to complete a request  fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most common workloads.",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "image": "image_blog2.png",
+    "type": "Product"
+  },
+  {
+    "title": "Guide to Serverless Computing",
+    "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal"],
+    "type": "Engineering",
+    "image": "image_blog3.png"
+  },
+  {
+    "title": "What is AWS Lambda",
+    "description": "AWS is a serverless computing service provided by AWS. It runs pieces of code (called Lambda function fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
+    "time_created": "4 March 2022",
+    "time_to_read": "6 minutes",
+    "writers": ["Shubham Kaushal", "Shalini Kaushal"],
+    "type": "Community",
+    "image": "image_blog1.png"
+  }
+]
