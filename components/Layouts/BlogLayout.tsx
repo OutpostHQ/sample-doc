@@ -4,7 +4,11 @@ const BlogLayout = ({ children, frontmatter }) => {
   return (
     <>
       {/* still need to make blog page layout*/}
-      <TopBar setSideNavOpen={() => {}} sideNavOpen={false} />
+      <TopBar
+        setSideNavOpen={() => {}}
+        sideNavOpen={false}
+        versionSelector={false}
+      />
       {children}
     </>
   )

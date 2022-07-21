@@ -12,9 +12,11 @@ import { NavBlock } from '../tasty'
 export function TopBar({
   sideNavOpen,
   setSideNavOpen,
+  versionSelector,
 }: {
   sideNavOpen: Boolean
   setSideNavOpen: React.Dispatch<SetStateAction<boolean>>
+  versionSelector: Boolean
 }) {
   return (
     <NavBlock>
@@ -27,7 +29,7 @@ export function TopBar({
           <Link type="undefined" to="/" label="home" size={'small'}>
             <MainLogo />
           </Link>
-          <VersionSelect />
+          {versionSelector && <VersionSelect />}
         </Flex>
         <section>
           <Flex alignItems="center">

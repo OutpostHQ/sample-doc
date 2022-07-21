@@ -10,6 +10,7 @@ import CompDetails from '../../utils/ComponentDetails'
 
 const DocsLayout = ({ children, frontmatter }) => {
   const [sideNavOpen, toggleSideNav] = useState(false)
+  const versionSelector = true
   return (
     <Grid
       gridColumns={['256px 1fr', '256px 1fr', sideNavOpen ? '1fr 0' : '1fr']}
@@ -19,7 +20,11 @@ const DocsLayout = ({ children, frontmatter }) => {
       fill={'#F5F5F5'}
     >
       <StickyBlock gridColumn="1 / -1" border="bottom">
-        <TopBar sideNavOpen={sideNavOpen} setSideNavOpen={toggleSideNav} />
+        <TopBar
+          sideNavOpen={sideNavOpen}
+          setSideNavOpen={toggleSideNav}
+          versionSelector={versionSelector}
+        />
       </StickyBlock>
       <TastySideNavWrapper
         height={[
