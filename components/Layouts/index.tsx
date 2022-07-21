@@ -22,7 +22,7 @@ const Layout = ({ children, frontmatter }) => {
         ) : frontmatter.type === 'blog' ? (
           <BlogLayout frontmatter={frontmatter}>{children}</BlogLayout>
         ) : (
-          <GenericLayout frontmatter={frontmatter}>{children}</GenericLayout>
+          <GenericLayout>{children}</GenericLayout>
         )}{' '}
       </Root>
     </BreakpointsProvider>

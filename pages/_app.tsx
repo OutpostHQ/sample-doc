@@ -61,8 +61,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     frontmatter.toc = pageProps.markdoc?.content
       ? collectHeadings(pageProps.markdoc.content)
       : Array<string>(0)
-    // console.log(frontmatter.toc)
   }
+  console.log(markdoc)
   return (
     <SSRProvider>
       <Head>
@@ -77,13 +77,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {markdoc ? (
-        <Layout frontmatter={frontmatter}>
-          <Component {...pageProps} />
-        </Layout>
-      ) : (
+      <Layout frontmatter={frontmatter}>
         <Component {...pageProps} />
-      )}
+      </Layout>
     </SSRProvider>
   )
 }

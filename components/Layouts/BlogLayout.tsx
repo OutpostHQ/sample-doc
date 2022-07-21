@@ -1,4 +1,12 @@
+import { TopBar } from '../TopBar'
+
 const BlogLayout = ({ children, frontmatter }) => {
-  return <>{children}</>
+  return (
+    <>
+      {/* still need to make blog page layout*/}
+      <TopBar setSideNavOpen={() => {}} sideNavOpen={false} />
+      {children}
+    </>
+  )
 }
 export default BlogLayout
