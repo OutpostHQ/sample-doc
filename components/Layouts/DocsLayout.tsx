@@ -17,7 +17,7 @@ const DocsLayout = ({ children, frontmatter }) => {
       gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
       height="100vh"
       color={'#2B2962'}
-      fill={'#F5F5F5'}
+      fill={'#F9F9FE'}
     >
       <StickyBlock gridColumn="1 / -1" border="bottom">
         <TopBar
@@ -61,9 +61,6 @@ const DocsLayout = ({ children, frontmatter }) => {
 
 const MainContent = ({ children, frontmatter }) => {
   const isComponent = frontmatter.type === 'doc-component'
-  const title = isComponent
-    ? CompDetails.get(frontmatter.id).title
-    : frontmatter.title
   return (
     <Grid gridRows={'1fr 200px'}>
       <Block padding={['50px 60px 0 ', '50px 30px 0 ', '50px 20px 0 ']}>

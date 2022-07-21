@@ -1,17 +1,18 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
-export const PageFooter = () => {
+export const PageFooter = ({ isComponent }) => {
   //from /docs/cat/file/usage  to cat/file or /docs/file to file
   const router = useRouter()
-  let pathChunk = router.pathname.replace('/docs/', '')
+  let pathChunk = router.pathname
+    .replace('/docs/', '')
+    .replace('/usage', '')
+    .replace('/design', '')
+    .replace('/props', '')
   const DocsArray = JSON.parse(process.env.DOCARRAY) || []
-
   let currentIndex = DocsArray.findIndex(
-    (docItem) => docItem.pathname.replace('/usage', '') == pathChunk
+    (docItem) => docItem.pathname.replace('/usage', '') === pathChunk
   )
-  // const lastPath = useRouter().pathname.split('/').at(-1)
-  // const lastPath = pathArray[pathArray.length - 1]
   return (
     <Flex
       padding="15px 20px"

@@ -14,8 +14,8 @@ const Layout = ({ children, frontmatter }) => {
         styles={TOKENS}
         router={Router}
         fonts={false}
-        font="SFProDisplay"
-        monospaceFont="SFMono"
+        font="Inter"
+        monospaceFont="Inter"
       >
         {String(frontmatter.type).includes('doc') ? (
           <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>

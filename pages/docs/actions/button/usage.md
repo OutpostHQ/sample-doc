@@ -44,17 +44,17 @@ Use the size prop to change the size of the button. You can set the value to sm,
 {% /container %}
 
 ```js
-<Stack spacing={4}  direction=‘row’  align=‘center’>
-<Button colorScheme='teal' size='xs'>
+<Stack spacing={4} direction="row" align="center">
+  <Button colorScheme="teal" size="xs">
     Button
   </Button>
-  <Button colorScheme='teal' size='sm'>
+  <Button colorScheme="teal" size="sm">
     Button
   </Button>
-  <Button colorScheme='teal' size='md'>
+  <Button colorScheme="teal" size="md">
     Button
   </Button>
-  <Button colorScheme='teal' size='lg'>
+  <Button colorScheme="teal" size="lg">
     Button
   </Button>
 </Stack>
@@ -66,26 +66,16 @@ Use the size prop to change the size of the button. You can set the value to sm,
 
 Use the variant prop to change the visual style of the Button. You can set the value to solid, ghost, outline, or link.
 
-{% container %}
-
-{% button type="primary" %}Button{% /button %}
-
-{% button type="primary" type="outline" %}Button{% /button %}
-
-{% button type="primary" type="clear" %}Button{% /button %}
-
-{% /container %}
-
-```js
-<Stack direction=‘row’  spacing={4}  align=‘center’>
-<Button colorScheme='teal' variant='solid'>
+```jsx
+<Space direction="row" spacing={4} align="center">
+  <Button colorScheme="teal" variant="solid">
     Button
   </Button>
-  <Button colorScheme='teal' variant='outline'>
+  <Button colorScheme="teal" variant="outline">
     Button
   </Button>
-  <Button colorScheme='teal' variant='link'>
+  <Button colorScheme="teal" variant="link">
     Button
   </Button>
-</Stack>
+</Space>
 ```

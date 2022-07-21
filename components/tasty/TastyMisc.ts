@@ -1,6 +1,4 @@
 import { CopySnippet, Space, tasty, Link } from '@cube-dev/ui-kit'
-import NextLink from 'next/link'
-import styled from 'styled-components'
 
 const BorderedClearLink = tasty(Link, {
   type: 'clear',
@@ -13,7 +11,7 @@ const BorderedCopySnippet = tasty(CopySnippet, {
   margin: '20px 0',
   style: {
     border: '1px solid rgba(20, 20, 70, 0.1)',
-    borderRadius: '10px',
+    borderRadius: '8px',
   },
 })
 const BorderedSpace = tasty(Space, {

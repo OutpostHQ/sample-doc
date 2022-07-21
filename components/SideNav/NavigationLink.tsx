@@ -1,5 +1,7 @@
 import { Button } from '@cube-dev/ui-kit'
+import Link from 'next/link'
 import { useContext } from 'react'
+import { SideMenuText } from '../tasty'
 import ToggleBlock from '../ToggleBlock'
 import { PathContext, NavStateContext } from './NavContexts'
 
@@ -21,19 +23,10 @@ export default function NavigationLink({
   const active = matchPath(pathChunk, path)
 
   return (
-    <ToggleBlock active={active} paddingInline="46px 0">
-      <Button
-        type="link"
-        to={`/docs/${item.pathname}`}
-        onPress={closeNav}
-        padding="0.4rem 0"
-        outline="0"
-        color={{
-          hovered: !active ? '#primary' : '',
-        }}
-      >
-        {item.name}
-      </Button>
+    <ToggleBlock active={active} paddingInline="46px 0" padding="0.3rem 0">
+      <Link href={`/docs/${item.pathname}`}>
+        <SideMenuText onClick={closeNav}>{item.name}</SideMenuText>
+      </Link>
     </ToggleBlock>
   )
 }

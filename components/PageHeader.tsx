@@ -3,6 +3,7 @@ import {
   BorderedClearLink,
   BorderedSpace,
   HOneText,
+  OnHoverText,
   PageDescriptionText,
 } from './tasty'
 import { GithubIcon } from './icons/GithubIcon'
@@ -18,21 +19,23 @@ const PageHeader = ({ id, scope }) => {
   const { title, description, source, pkg } = CompDetails.get(id)
 
   const ToggledLink = (pagetab) => {
+    const isCurrentPage = fullpath.endsWith(pagetab)
     return (
-      <Link href={`${pathChunk}/${pagetab}`}>
-        <Text
-          color={fullpath.endsWith(pagetab) ? '#primary.900' : 'initial'}
-          styles={{
-            borderBottom: `${
-              fullpath.endsWith(pagetab) ? '3px solid #primary.900' : 'initial'
-            }`,
-            transition: '2s',
-            textTransform: 'capitalize',
-          }}
-        >
-          {pagetab}
-        </Text>
-      </Link>
+      <Block
+        padding="5px 10px"
+        color="#2B2962"
+        styles={{
+          borderBottom: `${
+            isCurrentPage ? '4px solid #primary.900' : 'initial'
+          }`,
+          textTransform: 'capitalize',
+          fontWeight: `${isCurrentPage ? 700 : 500}`,
+        }}
+      >
+        <Link href={`${pathChunk}/${pagetab}`}>
+          <OnHoverText>{pagetab}</OnHoverText>
+        </Link>
+      </Block>
     )
   }
 

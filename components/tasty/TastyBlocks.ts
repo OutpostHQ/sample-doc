@@ -3,12 +3,18 @@ import styled from 'styled-components'
 const NavBlock = tasty(Block, {
   as: 'nav',
 })
+const SecondaryBlock = tasty(Block, {
+  styles: {
+    backgroundColor: '#EFEBFF',
+  },
+})
 const TastySideNavWrapper = tasty(NavBlock, {
   styles: {
-    backgroundColor: '#primary.10',
+    backgroundColor: '#EFEBFF',
     padding: '8px',
     overflowY: 'scroll',
     paddingTop: ['28px', '16px'],
+    border: '1px solid #E5E5FC',
   },
 })
 
@@ -25,25 +31,35 @@ const SectionBlock = tasty(Block, {
     marginBottom: '20px',
   },
 })
-// const HoveredBlock = styled(Block)`
-//   &:hover {
-//     background-color: #d7ceff;
-//   }
-//   border-radius: 5px;
-// `
+
 const ActiveBlock = tasty(Block, {
   styles: {
     fontWeight: 'bold',
     textDecoration: 'none',
-    backgroundColor: '#d7ceff',
+    backgroundColor: '#primary.30',
     borderRadius: '5px',
   },
 })
+const BorderedBlock = tasty(Block, {
+  styles: {
+    border: '1px solid rgba(20, 20, 70, 0.1)',
+    borderRadius: '8px',
+    marginBottom: '10px',
+  },
+})
+
+const ErrorBlock = tasty(Block, {
+  styles: {
+    background: '#danger',
+  },
+})
 export {
+  BorderedBlock,
+  ErrorBlock,
   StickyBlock,
   TastySideNavWrapper,
   SectionBlock,
   NavBlock,
   ActiveBlock,
-  //   HoveredBlock,
+  SecondaryBlock,
 }
