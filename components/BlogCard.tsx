@@ -2,8 +2,9 @@ import { Block, Button, Flex, Text } from '@cube-dev/ui-kit'
 import { MultipleUserAvatar, SingleUserAvatar } from './icons/Avatar'
 
 export function BlogCard({ blog, main }) {
+  let blogDecriptionStriped = ''
   if (!main && blog.description.length > 80) {
-    blog.description = blog.description.substring(0, 80) + '...'
+    blogDecriptionStriped = blog.description.substring(0, 80) + '...'
   }
   return (
     <Flex
@@ -46,7 +47,7 @@ export function BlogCard({ blog, main }) {
         <Text weight={600} style={{ lineHeight: '28px', fontSize: '20px' }}>
           {blog.title}
         </Text>
-        <Text>{blog.description}</Text>
+        <Text>{main ? blog.description : blogDecriptionStriped}</Text>
         <Flex gap="2x" alignItems="center">
           <Block
             width={blog.writers.length === 1 ? '40px' : '70px'}
