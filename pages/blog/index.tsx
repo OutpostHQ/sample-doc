@@ -14,7 +14,6 @@ const FILTER_TYPES = [
 ]
 export default function BlogLandingPage() {
   const [filter, setFilter] = useState('All')
-
   return (
     <>
       <Flex
@@ -42,7 +41,17 @@ export default function BlogLandingPage() {
         }}
       >
         {FILTER_TYPES.map((filterType) => (
-          <Button type="undefined" key={filterType}>
+          <Button
+            type="undefined"
+            key={filterType}
+            border={
+              filterType === filter
+                ? '3bw bottom #primary'
+                : '3bw bottom #00000000'
+            }
+            radius="0"
+            onPress={(e) => setFilter(e.target.textContent)}
+          >
             {filterType}
           </Button>
         ))}
@@ -58,10 +67,17 @@ export default function BlogLandingPage() {
           justifyContent="space-between"
         >
           {blogs &&
-            blogs.map((blog, index) => {
-              const main = index === 0
-              return <BlogCard key={index} blog={blog} main={main} />
-            })}
+            blogs
+              .filter((blog) => {
+                if (filter === 'All') return true
+                else {
+                  return blog.type === filter
+                }
+              })
+              .map((blog, index) => {
+                const main = index === 0
+                return <BlogCard key={index} blog={blog} main={main} />
+              })}
         </Flex>
       </Block>
     </>
