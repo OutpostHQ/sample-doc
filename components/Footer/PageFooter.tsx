@@ -1,7 +1,7 @@
 import { EditFilled, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Flex, Space, Text, Link } from '@cube-dev/ui-kit'
 import { useRouter } from 'next/router'
-export const PageFooter = ({ isComponent }) => {
+export const PageFooter = () => {
   //from /docs/cat/file/usage  to cat/file or /docs/file to file
   const router = useRouter()
   let pathChunk = router.pathname
