@@ -6,6 +6,7 @@ export const PageFooter = () => {
   const router = useRouter()
   let pathChunk = router.pathname.replace('/docs/', '')
   const DocsArray = JSON.parse(process.env.DOCARRAY) || []
+
   let currentIndex = DocsArray.findIndex(
     (docItem) => docItem.pathname.replace('/usage', '') == pathChunk
   )
