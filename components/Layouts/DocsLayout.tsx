@@ -6,7 +6,6 @@ import { ScrollableYGrid, StickyBlock, TastySideNavWrapper } from '../tasty'
 import { useState } from 'react'
 import { PageFooter, SiteFooter } from '../Footer'
 import { PageHeader } from '../PageHeader'
-import CompDetails from '../../utils/ComponentDetails'
 
 const DocsLayout = ({ children, frontmatter }) => {
   const [sideNavOpen, toggleSideNav] = useState(false)
