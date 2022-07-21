@@ -17,65 +17,34 @@ import { Button, ButtonGroup } from '@jenga-ui/button
 
 ## Usage
 
-{% container %}
-
-{% button type="primary"%} Button {%/button%}
-
-{%/container%}
-
-```js
-<Button colorScheme="blue">Button</Button>
+```jsx
+<Button type="primary">Button</Button>
 ```
 
 {% hr /%}
 
 ## Sizes
 
-Use the size prop to change the size of the button. You can set the value to sm, md, or lg.
+Use the size prop to change the size of the button. You can set the value to small, default, or large.
 
-{% container %}
-
-{% button type="primary" size="small" %}Button{% /button %}
-
-{% button type="primary" size="default" %}Button{% /button %}
-
-{% button type="primary" size="large" %}Button{% /button %}
-
-{% /container %}
-
-```js
-<Stack spacing={4} direction="row" align="center">
-  <Button colorScheme="teal" size="xs">
-    Button
-  </Button>
-  <Button colorScheme="teal" size="sm">
-    Button
-  </Button>
-  <Button colorScheme="teal" size="md">
-    Button
-  </Button>
-  <Button colorScheme="teal" size="lg">
-    Button
-  </Button>
-</Stack>
+```jsx
+<Space>
+  <Button size="small">Button</Button>
+  <Button size="default">Button</Button>
+  <Button size="large">Button</Button>
+</Space>
 ```
 
 {%hr/%}
 
-## Variants
+## Type
 
-Use the variant prop to change the visual style of the Button. You can set the value to solid, ghost, outline, or link.
+Use the type prop to change the visual style of the Button. You can set the value to primary, clear, link, etc. (See Props)
 
 ```jsx
-<Space direction="row" spacing={4} align="center">
-  <Button colorScheme="teal" variant="solid">
-    Button
-  </Button>
-  <Button colorScheme="teal" variant="outline">
-    Button
-  </Button>
-  <Button colorScheme="teal" variant="link">
-    Button
-  </Button>
+<Space>
+  <Button type="clear">Button</Button>
+  <Button type="primary">Button</Button>
+  <Button type="default">Button</Button>
 </Space>
 ```
