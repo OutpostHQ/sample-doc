@@ -4,7 +4,7 @@ import { TopBar } from '../TopBar'
 const genericLayout = ({ children }) => {
   const versionSelector = false
   return (
-    <Block color={'#2B2962'} fill={'#F5F5F5'}>
+    <Block color={'#2B2962'}>
       <TopBar
         setSideNavOpen={() => {}}
         sideNavOpen={false}
