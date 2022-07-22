@@ -16,7 +16,6 @@ const DocsLayout = ({ children, frontmatter }) => {
       gridRows={['63px 1fr', , sideNavOpen ? '106px 1fr' : '56px 1fr']} // change header length when menu open
       height="100vh"
       color={'#2B2962'}
-      fill={'#F9F9FE'}
     >
       <StickyBlock gridColumn="1 / -1" border="bottom">
         <TopBar
@@ -41,13 +40,7 @@ const DocsLayout = ({ children, frontmatter }) => {
         height={['calc(100vh - 65px)']}
       >
         <MainContent frontmatter={frontmatter}>{children}</MainContent>
-        <StickyBlock
-          height="calc(100vh - 234px)"
-          display={['initial', 'none']}
-          styles={{
-            borderBottom: 'none',
-          }}
-        >
+        <StickyBlock height="calc(100vh - 234px)" display={['initial', 'none']}>
           <TableOfContents toc={frontmatter.toc} />
         </StickyBlock>
         <Block gridColumn="1 / -1" border="top">
