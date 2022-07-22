@@ -1,53 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import NextLink from 'next/link'
-import {
-  BottomBorderedHeadline,
-  HThreeText,
-  HTwoText,
-  NavBlock,
-  SideMenuText,
-} from './tasty'
-import { Block, Space, Text } from '@cube-dev/ui-kit'
-import { useRouter } from 'next/router'
-import ToggleBlock from './ToggleBlock'
-import { BorderBottomOutlined } from '@ant-design/icons'
+import { Block, Button, Flex, Text } from '@cube-dev/ui-kit'
+import { useScrollSpy } from '../hooks/use-scrollspy'
 
 export function TableOfContents({ toc }) {
-  const items = toc.filter(
-    (item) => item.id && (item.level === 2 || item.level === 3)
+  const activeId = useScrollSpy(
+    toc.map(({ id }) => `[id="${id}"]`),
+    {
+      rootMargin: '0% 0% -24% 0%',
+    }
   )
 
-  if (items.length < 1) {
+  if (toc.length < 1) {
     return null
   }
-  const router = useRouter()
-  const [hash, setHash] = useState('')
-  useEffect(() => {
-    setHash(router.asPath.split('#')[1] || '')
-  }, [router])
   return (
-    <NavBlock padding={'50px 16px 0'}>
-      <Block padding="10px 0">
-        <BottomBorderedHeadline>Contents</BottomBorderedHeadline>
-      </Block>
-      <Space flow="column">
-        {items.map((item) => {
-          const href = `#${item.id}`
+    <>
+      <Flex flow="column" alignItems="start" margin="50px 0">
+        <Block padding="10px 30px" border="1bw left">
+          <Text preset="h6">Contents</Text>
+        </Block>
+        {toc.map((id) => {
           return (
-            <ToggleBlock
-              key={item.title}
-              active={hash === item.id}
-              padding={`3px auto 3px calc(15 * ${item.level - 1}px)`}
+            <Button
+              type="link"
+              to={`#${id.id}`}
+              outline="0"
+              padding="10px 30px"
+              fontWeight={activeId === id.id ? '600' : '400'}
+              color={{
+                hovered: activeId !== id.id ? '#primary' : '',
+              }}
+              border={(activeId === id.id ? '2bw' : '1bw') + ' left'}
             >
-              <NextLink href={href} passHref>
-                <SideMenuText weight={item.level === 2 ? 500 : 400}>
-                  {item.title}
-                </SideMenuText>
-              </NextLink>
-            </ToggleBlock>
+              {id.title}
+            </Button>
           )
         })}
-      </Space>
-    </NavBlock>
+      </Flex>
+    </>
   )
 }

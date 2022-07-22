@@ -23,10 +23,19 @@ export default function NavigationLink({
   const active = matchPath(pathChunk, path)
 
   return (
-    <ToggleBlock active={active} paddingInline="46px 0" padding="0.3rem 0">
-      <Link href={`/docs/${item.pathname}`}>
-        <SideMenuText onClick={closeNav}>{item.name}</SideMenuText>
-      </Link>
+    <ToggleBlock active={active} paddingInline="46px 0">
+      <Button
+        type="link"
+        to={`/docs/${item.pathname}`}
+        onPress={closeNav}
+        padding="0.4rem 0"
+        outline="0"
+        color={{
+          hovered: !active ? '#primary' : '',
+        }}
+      >
+        {item.name}
+      </Button>
     </ToggleBlock>
   )
 }
