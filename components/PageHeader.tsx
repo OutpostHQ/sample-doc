@@ -1,15 +1,8 @@
-import { Block, Flex, Space, Text } from '@cube-dev/ui-kit'
-import {
-  BorderedClearLink,
-  BorderedSpace,
-  HOneText,
-  OnHoverText,
-  PageDescriptionText,
-} from './tasty'
+import { Block, Flex, Link, Space, Text } from '@cube-dev/ui-kit'
 import { GithubIcon } from './icons/GithubIcon'
 import CompDetails from '../utils/ComponentDetails'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
+import NPMIcon from './icons/NpmIcon'
 const PageHeader = ({ id, scope }) => {
   const fullpath = useRouter().pathname
   const pathChunk = fullpath
@@ -21,51 +14,49 @@ const PageHeader = ({ id, scope }) => {
   const ToggledLink = (pagetab) => {
     const isCurrentPage = fullpath.endsWith(pagetab)
     return (
-      <Block
-        padding="5px 10px"
-        color="#2B2962"
-        styles={{
-          borderBottom: `${
-            isCurrentPage ? '4px solid #primary.900' : 'initial'
-          }`,
-          textTransform: 'capitalize',
-          fontWeight: `${isCurrentPage ? 700 : 500}`,
-        }}
+      <Link
+        to={`${pathChunk}/${pagetab}`}
+        color={{ ':hover': isCurrentPage ? '' : '#primary' }}
+        border={isCurrentPage ? '3bw bottom #primary' : ''}
+        textTransform="capitalize"
+        fontWeight={isCurrentPage ? 'bold' : 'normal'}
+        outline="0"
+        padding="16px"
       >
-        <Link href={`${pathChunk}/${pagetab}`}>
-          <OnHoverText>{pagetab}</OnHoverText>
-        </Link>
-      </Block>
+        {pagetab}
+      </Link>
     )
   }
 
   return (
     <Flex flow="column">
       <Block padding={'24px 0'}>
-        <HOneText>{title}</HOneText>
+        <Text preset="h1">{title}</Text>
       </Block>
-      <PageDescriptionText>{description}</PageDescriptionText>
+      <Text preset="p1">{description}</Text>
       <Space flow="row" gap={'16px'} padding={'20px 0 32px'}>
-        <BorderedClearLink to={'!' + source} type="clear" icon={<GithubIcon />}>
-          Source
-        </BorderedClearLink>{' '}
-        <BorderedClearLink
-          to={`!https://www.npmjs.com/package/${pkg}`}
-          type="clear"
+        <Link
+          to={'!' + source}
+          type="outline"
           icon={<GithubIcon />}
-          styles={{
-            border: '1px solid #primary.20',
-            borderRadius: '8px',
-          }}
+          radius="8px"
+        >
+          Source
+        </Link>{' '}
+        <Link
+          to={`!https://www.npmjs.com/package/${pkg}`}
+          type="outline"
+          icon={<NPMIcon />}
+          radius="8px"
         >
           {pkg}
-        </BorderedClearLink>
+        </Link>
       </Space>
-      <BorderedSpace>
+      <Flex border="bottom">
         {ToggledLink('usage')}
         {ToggledLink('props')}
         {ToggledLink('design')}
-      </BorderedSpace>
+      </Flex>
     </Flex>
   )
 }
