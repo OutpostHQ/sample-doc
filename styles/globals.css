@@ -125,7 +125,7 @@ svg {
   flex-direction: column;
   min-height: 0;
   border-radius: 0.75rem;
-  background-color: white;
+  background-color: var(--primary-bg);
 }
 
 .DocSearch-SearchBar {
@@ -242,6 +242,10 @@ svg {
   list-style-type: none;
 }
 
+.DocSearch-Dropdown ul ul {
+  list-style-type: circle;
+}
+
 .DocSearch-Hit-title {
   color: black;
   line-height: 1.5rem;
@@ -336,7 +340,7 @@ svg {
   top: auto;
   bottom: calc(100% + 0.25rem);
   height: calc(100% + 0.25rem);
-  background-color: #fff;
+  background-color: #f5f5f5;
 }
 
 .DocSearch-Hits mark {
