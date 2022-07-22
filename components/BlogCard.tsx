@@ -3,14 +3,14 @@ import { UserAvatar } from './BlogAvatar'
 
 export function BlogCard({ blog, main }) {
   let blogDecriptionStriped = ''
-  if (!main && blog.description.length > 80) {
+  if (blog.description.length > 80) {
     blogDecriptionStriped = blog.description.substring(0, 80) + '...'
   }
   return (
     <Flex
       gap="20px"
-      flow={main ? 'row' : 'column'}
-      width={main ? '100%' : ['380px', '320px', '300px']}
+      flow={main ? ['row', , 'column'] : 'column'}
+      width={main ? '100%' : ['28vw', '40vw', '100%']}
       padding="20px"
       flexShrink="0"
     >
@@ -18,8 +18,7 @@ export function BlogCard({ blog, main }) {
         overflow="hidden"
         radius="10px"
         flexShrink="0"
-        height={main ? '300px' : '180px'}
-        width={main ? '600px' : '(360px-40px)'}
+        height={main ? '300px' : ['180px', , '300px']}
       >
         <img
           src={'/images/' + blog.image}
@@ -30,11 +29,15 @@ export function BlogCard({ blog, main }) {
           }}
         />
       </Block>
-      <Flex flow="column" gap="20px" justifyContent="space-between">
+      <Flex
+        flow="column"
+        gap={['20px', '5px', '20px']}
+        justifyContent="space-between"
+      >
         <Flex
           flow={main ? 'column' : 'row'}
           justifyContent={main ? '' : 'space-between'}
-          gap={main ? '25px' : '0'}
+          gap={main ? ['20px', '1.5vw', ''] : '0'}
         >
           <Tag radius="20px">{blog.type}</Tag>
           <Flex color="rgba(71, 70, 109, 1)" gap="16px" alignItems="center">
@@ -45,7 +48,7 @@ export function BlogCard({ blog, main }) {
             <Text>{blog.time_to_read + ' read'}</Text>
           </Flex>
         </Flex>
-        <Text weight={600} style={{ lineHeight: '28px', fontSize: '20px' }}>
+        <Text weight={600} preset="h3">
           {blog.title}
         </Text>
         <Text>{main ? blog.description : blogDecriptionStriped}</Text>

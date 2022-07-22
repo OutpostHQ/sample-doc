@@ -9,7 +9,7 @@ export function Subscribe() {
           prefix={<MailOutlined />}
           placeholder="Subscribe via email"
           radius="0.5rem"
-          width="300px"
+          width={['300px', , '90%']}
         />
         <Button radius="0.5rem" type="primary">
           Subscribe

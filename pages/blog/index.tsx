@@ -1,8 +1,16 @@
-import { Block, Button, Flex, Grid, Text } from '@cube-dev/ui-kit'
+import {
+  Block,
+  BreakpointsProvider,
+  Button,
+  Flex,
+  Grid,
+  Text,
+} from '@cube-dev/ui-kit'
+import { url } from 'inspector'
 import { useEffect, useState } from 'react'
 import { BlogCard, Subscribe } from '../../components'
 import blogs from '../../utils/blogs.json'
-
+import gradient from '../../public/images/bg_gradient.png'
 const FILTER_TYPES = [
   'All',
   'Company',
@@ -15,51 +23,65 @@ const FILTER_TYPES = [
 export default function BlogLandingPage() {
   const [filter, setFilter] = useState('All')
   return (
-    <>
-      <Flex
-        flow="column"
-        justifyContent="center"
-        alignItems="center"
-        height="350px+60px"
-        gap="20px"
-        border="top bottom"
-      >
-        <Text preset="h1">Latest Updates</Text>
-        <Text preset="p1">
-          All the latest Jenga-UI news, straight from the team.
-        </Text>
-        <Subscribe />
-      </Flex>
-      <Flex
-        padding="20px 50px 50px 50px"
-        justifyContent="center"
+    <BreakpointsProvider value={[1200, 768]}>
+      <Block
         style={{
-          background:
-            'linear-gradient(180deg, rgba(245,245,245,0) 0%, rgba(245,245,245,1) 100%)',
+          backgroundImage: `url(${gradient.src})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
-        {FILTER_TYPES.map((filterType) => (
-          <Button
-            type="undefined"
-            key={filterType}
-            border={
-              filterType === filter
-                ? '3bw bottom #primary'
-                : '3bw bottom #00000000'
-            }
-            radius="0"
-            onPress={(e) => setFilter(e.target.textContent)}
+        <Flex
+          flow="column"
+          justifyContent="center"
+          alignItems="center"
+          height="350px+60px"
+          gap="20px"
+          border="top bottom"
+        >
+          <Text preset="h1">Latest Updates</Text>
+          <Text
+            preset="p1"
+            style={{
+              textAlign: 'center',
+            }}
           >
-            {filterType}
-          </Button>
-        ))}
-      </Flex>
-      <Block style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}>
-        <img src="/images/bg_gradient.png" />
+            All the latest Jenga-UI news, straight from the team.
+          </Text>
+          <Subscribe />
+        </Flex>
+        <Flex
+          padding={['20px 50px 50px 50px', , '20px 10px 50px 10px']}
+          justifyContent={['center', , 'flex-start']}
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(245,245,245,0) 0%, rgba(245,245,245,1) 100%)',
+          }}
+          width="100%"
+          overflow="scroll"
+        >
+          {FILTER_TYPES.map((filterType) => (
+            <Button
+              type="undefined"
+              key={filterType}
+              border={
+                filterType === filter
+                  ? '3bw bottom #primary'
+                  : '3bw bottom #00000000'
+              }
+              radius="0"
+              onPress={(e) => setFilter(e.target.textContent)}
+            >
+              {filterType}
+            </Button>
+          ))}
+        </Flex>
       </Block>
+      <Block>{/* <img src="/images/bg_gradient.png" width="100%" /> */}</Block>
       <Block fill="#F5F5F5">
         <Flex
-          padding={['50px 70px', , '50px 10px']}
+          padding={['50px 50px', '50px 30px', '50px 10px']}
           flow="wrap"
           gap="20px"
           justifyContent="space-between"
@@ -78,6 +100,6 @@ export default function BlogLandingPage() {
               })}
         </Flex>
       </Block>
-    </>
+    </BreakpointsProvider>
   )
 }
