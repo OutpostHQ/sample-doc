@@ -29,35 +29,35 @@ const PageHeader = ({ id, scope }) => {
   }
 
   return (
-    <Flex flow="column">
-      <Block padding={'24px 0'}>
+    <>
+      <Flex flow="column" gap="20px" margin="0 0 32px 0">
         <Text preset="h1">{title}</Text>
-      </Block>
-      <Text preset="p1">{description}</Text>
-      <Space flow="row" gap={'16px'} padding={'20px 0 32px'}>
-        <Link
-          to={'!' + source}
-          type="outline"
-          icon={<GithubIcon />}
-          radius="8px"
-        >
-          Source
-        </Link>{' '}
-        <Link
-          to={`!https://www.npmjs.com/package/${pkg}`}
-          type="outline"
-          icon={<NPMIcon />}
-          radius="8px"
-        >
-          {pkg}
-        </Link>
-      </Space>
+        <Text preset="p1">{description}</Text>
+        <Space flow="row" gap={'16px'}>
+          <Link
+            to={'!' + source}
+            type="outline"
+            icon={<GithubIcon />}
+            radius="8px"
+          >
+            Source
+          </Link>{' '}
+          <Link
+            to={`!https://www.npmjs.com/package/${pkg}`}
+            type="outline"
+            icon={<NPMIcon />}
+            radius="8px"
+          >
+            {pkg}
+          </Link>
+        </Space>
+      </Flex>
       <Flex border="bottom">
         {ToggledLink('usage')}
         {ToggledLink('props')}
         {ToggledLink('design')}
       </Flex>
-    </Flex>
+    </>
   )
 }
 
