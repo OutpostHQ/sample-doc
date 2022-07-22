@@ -1,5 +1,5 @@
-import { Block, Button, Flex, Text } from '@cube-dev/ui-kit'
-import { MultipleUserAvatar, SingleUserAvatar } from './icons/Avatar'
+import { Badge, Block, Button, Flex, Tag, Text } from '@cube-dev/ui-kit'
+import { UserAvatar } from './BlogAvatar'
 
 export function BlogCard({ blog, main }) {
   let blogDecriptionStriped = ''
@@ -31,34 +31,26 @@ export function BlogCard({ blog, main }) {
         />
       </Block>
       <Flex flow="column" gap="20px" justifyContent="space-between">
-        <Button
-          radius="100px"
-          placeSelf="flex-start"
-          padding="4px 8px"
-          type="outline"
+        <Flex
+          flow={main ? 'column' : 'row'}
+          justifyContent={main ? '' : 'space-between'}
+          gap={main ? '25px' : '0'}
         >
-          {blog.type}
-        </Button>
-        <Flex color="rgba(71, 70, 109, 1)" gap="16px">
-          <Text>{blog.time_created}</Text>
-          {/* <Block border width></Block> */}
-          <Text>{blog.time_to_read}</Text>
+          <Tag radius="20px">{blog.type}</Tag>
+          <Flex color="rgba(71, 70, 109, 1)" gap="16px" alignItems="center">
+            <Text>{blog.time_created}</Text>
+            <Block fill="#dark-01.3" width="5px" height="5px" radius="50px">
+              {' '}
+            </Block>
+            <Text>{blog.time_to_read + ' read'}</Text>
+          </Flex>
         </Flex>
         <Text weight={600} style={{ lineHeight: '28px', fontSize: '20px' }}>
           {blog.title}
         </Text>
         <Text>{main ? blog.description : blogDecriptionStriped}</Text>
-        <Flex gap="2x" alignItems="center">
-          <Block
-            width={blog.writers.length === 1 ? '40px' : '70px'}
-            height="40px"
-          >
-            {blog.writers.length === 1 ? (
-              <SingleUserAvatar />
-            ) : (
-              <MultipleUserAvatar />
-            )}
-          </Block>
+        <Flex gap alignItems="center">
+          <UserAvatar Writers={blog.writers} />
           <Text>{blog.writers.join(', ')}</Text>
         </Flex>
       </Flex>

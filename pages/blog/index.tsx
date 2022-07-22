@@ -24,10 +24,8 @@ export default function BlogLandingPage() {
         gap="20px"
         border="top bottom"
       >
-        <Text weight={600} style={{ lineHeight: '44px', fontSize: '42px' }}>
-          Latest Updates
-        </Text>
-        <Text style={{ lineHeight: '28px', fontSize: '20px' }}>
+        <Text preset="h1">Latest Updates</Text>
+        <Text preset="p1">
           All the latest Jenga-UI news, straight from the team.
         </Text>
         <Subscribe />

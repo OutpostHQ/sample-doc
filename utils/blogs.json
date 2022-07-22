@@ -4,7 +4,7 @@
     "description": "Serverless apps are easier maintain and scale, since the resources necessary to complete a request  fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most common workloads.",
     "time_created": "4 March 2022",
     "time_to_read": "6 minutes",
-    "writers": ["Shubham Kaushal"],
+    "writers": ["Shubham Kaushal", "Rahul Raj"],
     "type": "Product",
     "image": "image_blog1.png"
   },
@@ -22,7 +22,7 @@
     "description": "Serverless refers to applications where the management and allocation of servers and resource fully managed by  the color provider. Serverlesss apps are also billed only when they are actually in use; meaning that they can be a lot cheaper most",
     "time_created": "4 March 2022",
     "time_to_read": "6 minutes",
-    "writers": ["Shubham Kaushal"],
+    "writers": ["Rahul Raj"],
     "type": "Engineering",
     "image": "image_blog3.png"
   },
